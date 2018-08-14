@@ -1,0 +1,41 @@
+%btn {
+  border: none;
+  width: 80%;
+  color: white;
+  font: {
+    family: Parisienne;
+    size: 1.8vw;
+  }
+  padding: 1vw 2vw;
+  text: {
+    align: center;
+  }
+}
+
+
+%header_font_props {
+  font: {
+    size: 2.4vw;
+    family: 'Poiret One';
+  }
+  padding: 1vw 0;
+  text: {
+    align: center;
+  }
+}
+
+%paragraph_font_props {
+  font: {
+    family: Raleway;
+    size: 1.5vw;
+  }
+  padding: 1.3vw 1.5vw;
+}
+
+%background_stick {
+  background: {
+    repeat: no-repeat;
+    size: 100% 100%;
+    attachment: fixed;
+  }
+}

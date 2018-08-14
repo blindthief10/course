@@ -1,0 +1,80 @@
+.marg {
+  margin: 0 1vw;
+}
+
+.add-padding {
+  padding: 1.5vw 0;
+}
+
+.forest {
+  background-image: url(../exercises/conquer/images/forest.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 45vw;
+}
+
+.forest .take_height {
+  height: 45vw;
+  background: transparent;
+}
+
+.forest .take_height h2, .forest .take_height p {
+  margin: 5vw 0;
+  text-shadow: 0.2vw 0.1vw black;
+}
+
+.forest .take_height h2 {
+  font-size: 6.5vw;
+}
+
+.forest .take_height p {
+  font-size: 3.8vw;
+}
+
+.card {
+  margin: 2vw 0;
+}
+
+.card img {
+  height: 20vw;
+  width: 100%;
+}
+
+@media screen and (max-width: 990px) {
+  .card img {
+    height: 30vw;
+    width: 80%;
+  }
+}
+
+footer {
+  height: 40vw;
+  background-image: url(../images/hamburg.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: 80vw;
+  }
+}
+
+footer h3 {
+  text-shadow: 0.2vw 0.2vw black;
+}
+
+footer p {
+  font-size: 1.8vw;
+  font-family: tahoma;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+input, textarea {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: black !important;
+}

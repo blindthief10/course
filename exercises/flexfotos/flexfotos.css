@@ -1,0 +1,45 @@
+body {
+  background: #cccccc;
+}
+
+section {
+  display: inline-flex;
+  height: 45vw;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+div {
+  width: 30vw;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div img {
+  width: 60%;
+}
+
+div h3 {
+  font-size: 2.2vw;
+}
+
+div article {
+  font-size: 1.2vw;
+  text-align: center;
+}
+
+div h3, div article {
+  font-family: tahoma;
+}
+
+.sant h3 {
+  font-size: 1.1vw;
+}
+
+.sant article {
+  font-size: 0.9vw;
+}

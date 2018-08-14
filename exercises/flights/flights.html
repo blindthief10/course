@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flights</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Forum|Lato|Merienda" rel="stylesheet">
+  <link rel="stylesheet" href="flights.css">
+</head>
+<body>
+
+  <nav>
+    <li></li>
+    <a href="#"><li><img src="../../images/tripair-logo.svg" /></li></a>
+    <li><i class="fa fa-globe font-small white"></i><span class="font-small white merienda">Deutsch</span></li>
+    <li><i class="fa fa-phone font-small white"></i><span class="font-small white merienda">0800 181 2186</span></li>
+    <li></li>
+  </nav>
+
+  <main>
+    <img src="../../images/kobenhavn.jpg" />
+    <img src="../../images/hamburg.jpg" />
+    <div class="form-container">
+      <button class="btn white font-medium merienda"><span><i class="fa fa-plane font-medium white rotate"></i></span>Flights</button>
+      <form>
+        <li>
+          <input type="radio" name="oneway"><label for="oneway" class="font-medium white forum">One Way</label>
+          <input type="radio" name="oneway"><label for="oneway" class="font-medium white forum">Roundtrip</label>
+        </li>
+        <label class="font-medium white forum">Von</label>
+        <input class="font-medium lato" type="text" placeholder="City or airport" />
+        <label class="font-medium white forum">Hinflug</label>
+        <input class="font-medium lato" type="date" />
+        <label class="font-medium white forum">Passengers</label>
+        <select class="font-medium lato">
+          <option>Erwachsene</option>
+          <option>Kinder</option>
+          <option>Babys</option>
+        </select>
+        <li><input type="checkbox"><label class="font-medium white forum">Only direct flights</label></li>
+        <label class="font-medium white forum">Nach</label>
+        <input class="font-medium lato" type="text" placeholder="City or airport" />
+        <label class="font-medium white forum">Rückflug</label>
+        <input class="font-medium lato" type="date" disabled/>
+        <button type="submit" class="form-btn font-medium white">Suchen</button>
+      </form>
+    </div>
+  </main>
+
+  <section class="uberuns">
+    <h2 class="font-large white forum">Warum bei uns buchen?</h2>
+    <div class="col-container">
+      <article class="cols">
+        <li><i class="fa fa-user-check font-large"></i></li>
+        <h4 class="font-small lato white">Effiziente Kundenbetreuung</h4>
+        <p class="white lato">
+           Unsere Kundenbetreuung ist bereit dafür, Ihnen auf alle Fälle zu helfen.
+           Mailen oder rufen Sie uns vor, während oder nach Ihrer Buchung an.
+        </p>
+      </article>
+      <article class="cols">
+        <li><i class="fa fa-luggage-cart font-large"></i></li>
+        <h4 class="font-small lato white">Buchung leicht gemacht</h4>
+        <p class="white lato">
+          Der Buchungsprozess war noch nie einfacher. Sie sind nur 5 schnelle Schritte entfernt
+          vom Ankauf Ihres Flugtickets über jedes Gerät!
+        </p>
+      </article>
+      <article class="cols">
+        <li><i class="fa fa-handshake font-large"></i></li>
+        <h4 class="font-small lato white">Sichere Zahlungen</h4>
+        <p class="white lato">
+          Tripair ist mit allen fortgeschrittenen Mitteln ausgestattet,
+          die die Sicherheit Ihrer persönlichen Daten gewährleisten.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="melde">
+    <h3 class="font-medium merienda">Exklusive Angebote an Ihr Mail Inbox zugeschickt</h3>
+    <p class="font-small lato">
+      Brauchen Sie Inspiration für Ihre nächste Reise? Lassen Sie uns Ihnen die letzten
+      Angebote verschaffen, die nicht zu verpassen sind! Melden Sie sich zu unserem
+      Newsletter für Tipps an, die Ihnen beim schlauen Reisen helfen.
+    </p>
+    <input type="text" placeholder="Ihre E-Mail" class="font-small lato"/>
+    <button type="button" class="font-small lato white">Melden Sie sich an</button>
+  </section>
+
+  <h3 class="font-large merienda">Flüge von Hamburg</h3>
+
+  <section class="routewrapper">
+
+    <div class="route">
+      <li>
+        <span class="forum blue">Von: <strong>11 Aug</strong></span>
+        <span class="forum blue">Rückflug: <strong>14 Aug</strong></span>
+        <span class="forum blue">Preis</span>
+      </li>
+      <li>
+        <span class="forum blue">ab <strong>Hamburg</strong></span>
+        <span class="forum blue">nach <strong>Luxembourg</strong></span>
+        <span class="forum pink"><strong>216</strong><i class="fa fa-euro-sign"></i></span>
+      </li>
+    </div>
+
+    <div class="route">
+      <li>
+        <span class="forum blue">Von: <strong>13 Aug</strong></span>
+        <span class="forum blue">Rückflug: <strong>17 Aug</strong></span>
+        <span class="forum blue">Preis</span>
+      </li>
+      <li>
+        <span class="forum blue">ab <strong>Hamburg</strong></span>
+        <span class="forum blue">nach <strong>Athens</strong></span>
+        <span class="forum pink"><strong>188</strong><i class="fa fa-euro-sign"></i></span>
+      </li>
+    </div>
+
+    <div class="route">
+      <li>
+        <span class="forum blue">Von: <strong>19 Aug</strong></span>
+        <span class="forum blue">Rückflug: <strong>22 Aug</strong></span>
+        <span class="forum blue">Preis</span>
+      </li>
+      <li>
+        <span class="forum blue">ab <strong>Hamburg</strong></span>
+        <span class="forum blue">nach <strong>Santiago</strong></span>
+        <span class="forum pink"><strong>564</strong><i class="fa fa-euro-sign"></i></span>
+      </li>
+    </div>
+
+    <div class="route">
+      <li>
+        <span class="forum blue">Von: <strong>22 Aug</strong></span>
+        <span class="forum blue">Rückflug: <strong>24 Aug</strong></span>
+        <span class="forum blue">Preis</span>
+      </li>
+      <li>
+        <span class="forum blue">ab <strong>Hamburg</strong></span>
+        <span class="forum blue">nach <strong>Damascus</strong></span>
+        <span class="forum pink"><strong>223</strong><i class="fa fa-euro-sign"></i></span>
+      </li>
+    </div>
+
+  </section>
+
+  <section class="companies">
+    <div class="companies-logos">
+      <img src="../../images/aeroflot.png" alt="">
+      <img src="../../images/emirates.png" alt="">
+      <img src="../../images/klm.png" alt="">
+      <img src="../../images/lufthansa.png" alt="">
+      <img src="../../images/iberia.png" alt="">
+      <img src="../../images/turkish.png" alt="">
+    </div>
+  </section>
+
+
+</body>
+</html>

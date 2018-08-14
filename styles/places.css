@@ -1,0 +1,43 @@
+* {
+  margin:0;
+  padding: 0;
+  font-size: 0;
+}
+
+header {
+  border: 1px solid black;
+}
+
+header img {
+  width: 15%;
+  height: auto;
+}
+
+header h1 {
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  font-size: 5vw;
+  margin-left: 11vw;
+  margin-top: 4.5vw;
+  font-family: helvetica;
+}
+
+nav {
+  background: cyan;
+  text-align: center;
+}
+
+nav li {
+  font-size: 3vw;
+  display: inline-block;
+  padding: 2.1vw 1vw;
+  color: white;
+  font-family: helvetica;
+  transition: all 0.3s linear;
+}
+
+nav li:hover {
+  background: black;
+  color: cyan;
+}

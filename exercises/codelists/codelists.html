@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Codelists</title>
+  <link rel="stylesheet" href="codelists.css">
+</head>
+<body>
+
+  <h3>My favorite thing</h3>
+
+
+  <code>
+    <pre>
+      <span class="deepblue">function</span> <span class="green">checkAnagram</span>(<span class="orange">word</span>) {
+        <span class="grey">// This is a function that checks if the given word is a palindrome</span>
+        <span class="deepblue">var</span> splitWord = word.<span class="deepblue">split</span>(<span class="yellow">''</span>).<span class="deepblue">reverse</span>().<span class="deepblue">join</span>();
+        <span class="red">if</span> (word === splitWord) {
+          console.<span class="deepblue">log</span>(<span class="yellow">'It is an anagram'</span>);
+        } <span class="red">else</span> {
+          console.<span class="deepblue">log</span>(<span class="yellow">'Apparently is not!'</span>);
+        }
+      }
+    </pre>
+  </code>
+
+</body>
+</html>

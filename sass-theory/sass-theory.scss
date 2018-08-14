@@ -1,0 +1,26 @@
+li {
+  list-style-type: none;
+  height: 5vw;
+  background: yellow;
+  margin-bottom: 1vw;
+  width: 0;
+
+        @for $num from 1 through 10 {
+          // Repeated Stuff!!!
+          &.item#{$num} {
+            @if $num == 1 {
+              transition: width 2s ease-out;
+            } @else {
+            transition: width 2s ease-out (($num / 2) - 0.5) + s;
+            }
+          }
+
+
+          }
+
+
+}
+
+button:focus ~ li {
+  width: 100%;
+}

@@ -1,0 +1,95 @@
+.begin {
+  font-size: 2.5em;
+}
+
+.green {
+  color: green;
+}
+
+article.begin {
+  font-family: helvetica;
+}
+
+section {
+  border: 2px dotted black;
+  text-align: center;
+}
+
+section h4 {
+  background: black;
+  color: white;
+  font-size: 2.5vw;
+  font-family: tahoma;
+  padding: 1vw;
+  margin: 1vw 0;
+}
+
+section img {
+  width: 50%;
+  height: auto;
+}
+
+img + article {
+  color: green;
+  background: black;
+  font-family: helvetica;
+  text-indent: 3%;
+  word-spacing: 0.4vw;
+  letter-spacing: 0.1vw;
+}
+
+section span {
+  background: yellow;
+  color: black;
+  font-size: 4vw;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav li:nth-child(3) {
+  background: red;
+}
+
+button {
+  font-size: 2.5vw;
+  color: white;
+  background: purple;
+  padding: 1.2vw 0.8vw;
+  border: none;
+  border-radius: 1.5vw;
+}
+
+button:hover {
+  background: brown;
+}
+
+button:focus {
+  outline: none;
+}
+
+p {
+  background: brown;
+  color: #fff;
+  font-size: 1.2vw;
+  font-family: helvetica;
+  font-weight: 700;
+  display: none;
+}
+
+button:focus ~ p {
+  display: block;
+}
+
+input[type="text"] {
+  background:green;
+}
+
+input[type="number"] {
+  background: grey;
+}
+
+img[width="500"] {
+  border-radius: 150px;
+}

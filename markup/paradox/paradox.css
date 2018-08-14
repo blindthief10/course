@@ -1,0 +1,22 @@
+body {
+  background: #ccc;
+}
+
+main {
+  display: grid;
+  width: 75vw;
+  border: 1px solid black;
+  grid-template-areas: 'tester tester tester tester show'
+                       'tester tester tester tester show'
+                       'tester tester tester tester show'
+                       'tester tester tester tester show'
+                       'facial facial facial facial show';
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 7vw);
+  margin: 5vw auto;
+}
+
+main div {
+  background: yellow;
+  grid-area: tester;
+}

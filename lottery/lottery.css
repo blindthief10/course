@@ -1,0 +1,19 @@
+.super_small {
+  font-size: 1vw;
+}
+
+.small {
+  font-size: 1.5vw;
+}
+
+.medium {
+  font-size: 2.2vw;
+}
+
+.large {
+  font-size: 3vw;
+}
+
+.enormous {
+  font-size: 4.5vw;
+}

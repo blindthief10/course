@@ -1,0 +1,43 @@
+body {
+  background: #cccccc;
+}
+
+main {
+  width: 90vw;
+  border: 1px solid black;
+  margin: 2vw auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+section {
+  /* width: 25%; */
+}
+
+section:first-of-type {
+  background: blue;
+}
+
+section:nth-of-type(2) {
+  background: red;
+}
+
+section:last-of-type {
+  background: green;
+}
+
+main#col {
+  flex-direction: column;
+  height: 30vw;
+  align-items: center;
+}
+
+main#col section:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+main#col section {
+
+}

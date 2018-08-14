@@ -1,0 +1,14 @@
+footer {
+  padding: 5vw;
+
+  h3 {
+    @extend %header_font_props;
+  }
+
+  p {
+    @extend %paragraph_font_props;
+    text: {
+      align: center;
+    }
+  }
+}

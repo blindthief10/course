@@ -1,0 +1,193 @@
+:root {
+  --light-blue: #0DEBCD;
+  --darker-blue: #0AB8A1;
+}
+
+* {
+  margin: 0;
+}
+
+section, article, nav, li, a, p, div, main, footer, header, h1, h2, h3,
+h4, h5, h6 {
+  box-sizing: border-box;
+}
+
+nav {
+  background: var(--light-blue);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+nav li {
+  list-style-type: none;
+  order: 1;
+  flex-grow: 1;
+}
+
+nav a {
+  font-family: peddana;
+  text-decoration: none;
+  color: white;
+  font-size: 2.4vw;
+  padding: 0.7vw 2.2vw;
+}
+
+nav li img {
+  height: 5vw;
+}
+
+nav a:hover {
+  background: var(--darker-blue);
+}
+
+main {
+  height: 90vh;
+  background-image: url(../../images/beach.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main h4 {
+  font-family: Italianno;
+  font-size: 5.5vw;
+  color: gold;
+}
+
+main h4, main article {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+main h4 {
+  transition: opacity 1s ease-in 0.7s;
+}
+
+main article {
+  font-family: peddana;
+  font-size: 3.5vw;
+  color: #fff;
+}
+
+main button {
+  font-family: Audiowide;
+  font-size: 2.2vw;
+  border: none;
+  border-radius: 5%;
+  background: red;
+  width: 20vw;
+  align-self: center;
+  color: white;
+  order: 1;
+  margin-bottom: 50px;
+}
+
+main button:hover {
+  cursor: pointer;
+  background: white;
+  color: red;
+}
+
+main button:focus {
+  outline: none;
+}
+
+main button:focus ~ * {
+  opacity: 1;
+}
+
+section {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+section div {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.5vw 1.5vw;
+}
+
+section div h4 {
+  font-family: italianno;
+  color: gold;
+  font-size: 3.5vw;
+}
+
+section div h4::selection {
+  background: gold;
+  color: red;
+}
+
+section div img {
+  width: 40%;
+  height: 120px;
+  border-radius: 40%;
+  transition: box-shadow 0.5s linear;
+}
+
+section div img:hover {
+  box-shadow: 0 0 25px black;
+}
+
+section div blockquote {
+  font-family: peddana;
+  font-size: 2.4vw;
+  color: deepskyblue;
+}
+
+section div blockquote::selection {
+  background: red;
+}
+
+h3 {
+  margin: 5vw 0 3vw 0;
+  text-align: center;
+  font-size: 5vw;
+  font-family: italianno;
+}
+
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 80vw;
+  margin: 0 auto 10vw auto;
+  height: 50vw;
+  border: 1px solid black;
+  background-image: url(https://i0.wp.com/thebigbus.com.au/wp-content/uploads/2017/05/bigstock-Beautiful-Oia-town-on-Santorin-167943536.jpg?resize=920%2C613&ssl=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer > article {
+  background: rgba(0, 0, 0, 0.7);
+  font-family: Georgia;
+  text-align: center;
+  font-size: 2.5vw;
+  padding: 0;
+  color: white;
+  height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.4s linear;
+}
+
+footer:hover > article {
+  height: 10vw;
+  padding: 2vw 0.7vw;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+
+  section div {
+    margin-bottom: 5vw;
+  }
+}

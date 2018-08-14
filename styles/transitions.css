@@ -1,0 +1,55 @@
+body {
+  background: cyan;
+}
+
+button {
+  background: orange;
+  font-size: 2.2vw;
+  padding: 1.5vw 1vw;
+  color: red;
+  border: 1px solid red;
+  border-radius: 0.8vw;
+}
+
+button::after {
+  content: 'Click me and see what happens!';
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+div {
+  width:200px;
+  height: 200px;
+  border-radius: 100px;
+  background: yellow;
+  margin-top: 50px;
+  transition: all 1s linear 0.5s;
+}
+
+button:focus ~ div {
+  background: rebeccapurple;
+}
+
+@media screen and (max-width: 768px)  {
+  body {
+    text-align: center;
+  }
+
+  button {
+    background: green;
+  }
+
+}
+
+
+@media screen and (max-width: 380px) {
+
+  button {
+    font-size: 4vw;
+  }
+
+
+}

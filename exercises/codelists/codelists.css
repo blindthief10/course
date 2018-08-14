@@ -1,0 +1,38 @@
+body {
+  background: #cccccc;
+}
+
+pre {
+  background: black;
+  color: white;
+  font-family: monospace;
+  font-size: 1.8vw;
+  padding: 2vw;
+  width: 75vw;
+  margin: 5vw auto;
+}
+
+.deepblue {
+  color: deepskyblue;
+}
+
+.green {
+  color: #3ACC0D;
+}
+
+.orange {
+  color: orange;
+}
+
+.yellow{
+  color: yellow;
+}
+
+.red {
+  color: red;
+}
+
+.grey {
+  color: #cccccc;
+  opacity: 0.7;
+}

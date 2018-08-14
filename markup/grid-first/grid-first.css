@@ -1,0 +1,108 @@
+:root {
+  counter-reset: box-nr;
+  counter-reset: food-nr;
+  --light-blue: #32E1FF;
+  --light-green: #21FF13;
+  --bigger-font: 3.5vw;
+  --smaller-font: 1.5vw;
+  --my-name: 'jake';
+  --image-address: https://www.cdnjs.cloudflare.com/some-unbelievable-source.png;
+}
+
+body {
+  margin: 0;
+  background-image: url(var(--image-address));
+}
+
+body main {
+  width: 80vw;
+  margin: 5vw auto;
+  display: grid;
+  border: 0.1vw solid black;
+  grid-template: repeat(9, 10vw) / repeat(6, 1fr);
+  grid-gap: 1vw 0.5vw;
+}
+
+main div:first-of-type {
+  background: blue;
+  grid-area: 1 / 1/ span 1 / span 1;
+}
+
+main div:last-of-type {
+  background: black;
+  grid-area: 8 / 1 / span 2 / span 6;
+}
+
+main div:nth-of-type(2) {
+  background: orange;
+  grid-area: 1 / 2 / span 1 / span 5;
+}
+
+main div:nth-of-type(3) {
+  background: brown;
+  grid-area: 2 / 1 / span 2 / span 4;
+}
+
+main div:nth-of-type(4) {
+  background: deepskyblue;
+  grid-area: 2 / 5 / span 1 / span 2;
+}
+
+main div:nth-of-type(5) {
+  background: lightgreen;
+  grid-area: 3 / 5 / span 1 / span 2;
+}
+
+main div:nth-of-type(6) {
+  background: rebeccapurple;
+  grid-area: 4 / 6 / span 4 / span 1;
+}
+
+main div:nth-of-type(7) {
+  background: purple;
+  grid-area: 4 / 3 / span 4 / span 3;
+}
+
+main div:nth-of-type(8) {
+  background: yellow;
+  grid-area: 4 / 1 / span 2 / span 2;
+}
+
+main div:nth-of-type(9) {
+  background: var(--light-green);
+  grid-area: 6 / 1 / span 2 / span 2;
+}
+
+div span {
+  font-size: 2vw;
+  color: white;
+}
+
+div span:before {
+  counter-increment: box-nr;
+  content: "This is box"  counter(box-nr);
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: var(--smaller-font);
+  padding: 1.5vw 1vw;
+  font-family: verdana;
+  color:white;
+  background: var(--light-blue);
+  border-bottom: 1px solid black;
+}
+
+ul > li:before {
+  counter-increment: food-nr;
+  content: counter(food-nr)'.' var(--my-name);
+}

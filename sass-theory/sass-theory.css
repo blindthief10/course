@@ -1,0 +1,51 @@
+li {
+  list-style-type: none;
+  height: 5vw;
+  background: yellow;
+  margin-bottom: 1vw;
+  width: 0;
+}
+
+li.item1 {
+  transition: width 2s ease-out;
+}
+
+li.item2 {
+  transition: width 2s ease-out 0.5s;
+}
+
+li.item3 {
+  transition: width 2s ease-out 1s;
+}
+
+li.item4 {
+  transition: width 2s ease-out 1.5s;
+}
+
+li.item5 {
+  transition: width 2s ease-out 2s;
+}
+
+li.item6 {
+  transition: width 2s ease-out 2.5s;
+}
+
+li.item7 {
+  transition: width 2s ease-out 3s;
+}
+
+li.item8 {
+  transition: width 2s ease-out 3.5s;
+}
+
+li.item9 {
+  transition: width 2s ease-out 4s;
+}
+
+li.item10 {
+  transition: width 2s ease-out 4.5s;
+}
+
+button:focus ~ li {
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+
+
+section {
+  width: 75vw;
+  height: 30vw;
+  background: {
+    repeat: no-repeat;
+    size: 100% 500%;
+  }
+
+  @for $i from 0 through 4 {
+    // Repeating code
+    &:nth-of-type(#{$i+1}) {
+      background-position: 0 $i*100%;
+    }
+
+
+  }
+}

@@ -1,0 +1,53 @@
+#four_cols {
+  width: 90vw;
+  padding: 5vw 1vw;
+  margin: 3vw auto;
+  display: flex;
+  justify-content: space-around;
+
+    .header {
+    height: 10vw;
+  }
+
+  h4, article {
+    margin: 0;
+  }
+
+  h4 {
+    @extend %header_font_props;
+  }
+
+  article {
+    @extend %paragraph_font_props;
+    font-size: 1.4vw;
+    padding: 0.3vw 1vw;
+  }
+
+  > div {
+
+    width: 20%;
+    background-color: #ccc;
+    padding-bottom: 3vw;
+
+  @each $i, $col_name, $photo in (1, One, colorado),
+             (2, Two, alps),
+             (3, Three, lifeguard),
+             (4, Four, spring) {
+                 &:nth-of-type(#{$i}) {
+                     .header {
+                       background: {
+                         image: url(../images/#{$photo}.jpg);
+                         repeat: no-repeat;
+                         size: 100% 100%;
+                       }
+                     }
+                     h4:after {
+                       content: ' #{$col_name}';
+                     }
+                 }
+
+
+
+             }
+    }
+}
