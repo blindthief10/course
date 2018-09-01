@@ -25,23 +25,23 @@ body section li:hover > i {
 }
 
 body section li:hover > i:nth-of-type(1) {
-  transition: opacity 0.5s ease-in 0s;
+  transition: opacity 0.5s ease-out 0s;
 }
 
 body section li:hover > i:nth-of-type(2) {
-  transition: opacity 0.5s ease-in 1s;
+  transition: opacity 0.5s ease-out 1s;
 }
 
 body section li:hover > i:nth-of-type(3) {
-  transition: opacity 0.5s ease-in 2s;
+  transition: opacity 0.5s ease-out 2s;
 }
 
 body section li:hover > i:nth-of-type(4) {
-  transition: opacity 0.5s ease-in 3s;
+  transition: opacity 0.5s ease-out 3s;
 }
 
 body section li:hover > i:nth-of-type(5) {
-  transition: opacity 0.5s ease-in 4s;
+  transition: opacity 0.5s ease-out 4s;
 }
 
 body section li i {
