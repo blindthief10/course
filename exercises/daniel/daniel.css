@@ -14,3 +14,7 @@ body section li {
   font-size: 1.8vw;
   font-family: Georgia;
 }
+
+body section li i {
+  opacity: 0;
+}
