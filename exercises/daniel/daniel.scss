@@ -18,11 +18,15 @@ body {
         cursor: pointer;
         > i {
           opacity: 1;
+          @for $num from 1 through 5 {
+            &:nth-of-type(#{$num}) {
+              transition: opacity 0.5s ease-in ($num - 1) + s;
+            }
+          }
         }
       }
       i {
         opacity: 0;
-        transition: opacity 1s linear;
       }
     }
   }
