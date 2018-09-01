@@ -15,6 +15,16 @@ body section li {
   font-family: Georgia;
 }
 
+body section li:hover {
+  background: #0099cc;
+  cursor: pointer;
+}
+
+body section li:hover > i {
+  opacity: 1;
+}
+
 body section li i {
   opacity: 0;
+  transition: opacity 1s linear;
 }

@@ -13,8 +13,16 @@ body {
         size: 1.8vw;
         family: Georgia;
       }
+      &:hover {
+        background: darken(deepskyblue, 10%);
+        cursor: pointer;
+        > i {
+          opacity: 1;
+        }
+      }
       i {
         opacity: 0;
+        transition: opacity 1s linear;
       }
     }
   }
