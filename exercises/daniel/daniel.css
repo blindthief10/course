@@ -7,3 +7,10 @@ body section {
   display: flex;
   flex-direction: column;
 }
+
+body section li {
+  list-style-type: none;
+  padding: 1.5vw 1vw;
+  font-size: 1.8vw;
+  font-family: Georgia;
+}
