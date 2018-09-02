@@ -1,0 +1,50 @@
+@keyframes change_opacity {
+  0% {};
+  20% {opacity: 1;};
+  100% {opacity: 1;};
+}
+
+@keyframes show_paragraph {
+  0% {};
+  100% {visibility: visible;}
+}
+
+
+body {
+  margin: 0;
+
+  .container {
+    background: orange;
+
+    button {
+      padding: 1vw 1.5vw;
+      margin: 1vw 1.5vw;
+      font-size: 2vw;
+      background: transparent;
+      border: none;
+      border: 0.1vw solid black;
+      border-radius: 10%;
+      opacity: 0.2;
+      background: black;
+      color: white;
+      &:hover {
+        cursor: pointer;
+      }
+
+      @each $pos, $delay in (1, 0), (2, 5), (3, 10), (4, 15), (5, 20), (6, 25) {
+        &:nth-of-type(#{$pos}) {
+          animation: change_opacity 5s linear $delay + s backwards;
+          ~ p:nth-of-type(#{$pos}) {
+            animation: show_paragraph 5s linear $delay + s backwards;
+          } 
+        }
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 2vw;
+      padding: 1vw 2vw;
+      visibility: hidden;
+    }
+  }
+}

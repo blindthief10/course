@@ -1,0 +1,98 @@
+@keyframes change_opacity {
+  0% {
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show_paragraph {
+  0% {
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+body .container {
+  background: orange;
+}
+
+body .container button {
+  padding: 1vw 1.5vw;
+  margin: 1vw 1.5vw;
+  font-size: 2vw;
+  background: transparent;
+  border: none;
+  border: 0.1vw solid black;
+  border-radius: 10%;
+  opacity: 0.2;
+  background: black;
+  color: white;
+}
+
+body .container button:hover {
+  cursor: pointer;
+}
+
+body .container button:nth-of-type(1) {
+  animation: change_opacity 5s linear 0s backwards;
+}
+
+body .container button:nth-of-type(1) ~ p:nth-of-type(1) {
+  animation: show_paragraph 5s linear 0s backwards;
+}
+
+body .container button:nth-of-type(2) {
+  animation: change_opacity 5s linear 5s backwards;
+}
+
+body .container button:nth-of-type(2) ~ p:nth-of-type(2) {
+  animation: show_paragraph 5s linear 5s backwards;
+}
+
+body .container button:nth-of-type(3) {
+  animation: change_opacity 5s linear 10s backwards;
+}
+
+body .container button:nth-of-type(3) ~ p:nth-of-type(3) {
+  animation: show_paragraph 5s linear 10s backwards;
+}
+
+body .container button:nth-of-type(4) {
+  animation: change_opacity 5s linear 15s backwards;
+}
+
+body .container button:nth-of-type(4) ~ p:nth-of-type(4) {
+  animation: show_paragraph 5s linear 15s backwards;
+}
+
+body .container button:nth-of-type(5) {
+  animation: change_opacity 5s linear 20s backwards;
+}
+
+body .container button:nth-of-type(5) ~ p:nth-of-type(5) {
+  animation: show_paragraph 5s linear 20s backwards;
+}
+
+body .container button:nth-of-type(6) {
+  animation: change_opacity 5s linear 25s backwards;
+}
+
+body .container button:nth-of-type(6) ~ p:nth-of-type(6) {
+  animation: show_paragraph 5s linear 25s backwards;
+}
+
+body .container p {
+  text-align: center;
+  font-size: 2vw;
+  padding: 1vw 2vw;
+  visibility: hidden;
+}

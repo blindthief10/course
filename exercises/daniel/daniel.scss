@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+
+  section {
+    background: deepskyblue;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      list-style-type: none;
+      padding: 1.5vw 1vw;
+      font: {
+        size: 1.8vw;
+        family: Georgia;
+      }
+      &:hover {
+        background: darken(deepskyblue, 10%);
+        cursor: pointer;
+        > i {
+          opacity: 1;
+          @for $num from 1 through 5 {
+            &:nth-of-type(#{$num}) {
+              transition: opacity 0.5s ease-out ($num - 1) + s;
+            }
+          }
+        }
+      }
+      i {
+        opacity: 0;
+      }
+    }
+  }
+}
