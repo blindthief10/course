@@ -1,35 +1,24 @@
-var money = 500;
-var cheapestRoom = 200;
-var isVip = true;
-var customersColor = 'blue';
+var numOfBalls = 5;
+var price;
 
-// money -= 400;
-var enoughMoney = money > cheapestRoom;
-
-if (enoughMoney) {
-
-  if (money >= cheapestRoom * 2) {
-      if (isVip) {
-        switch (customersColor){
-          case 'red':
-            console.log('take the red suite!');
-            break;
-          case 'blue':
-            console.log('take the blue suite!');
-            break;
-          case 'green':
-            console.log('take the green suite!');
-            break;
-          default:
-            console.log('take the Gray suite!');
-        }
-      } else {
-        console.log('Get the bigger room!');
-      }
-  }else {
-    console.log('Get the cheapest room!');
-  }
-
-} else {
-  console.log('Get another place!');
+switch(numOfBalls) {
+  case 1:
+    price = 1;
+    break;
+  case 2:
+    price = 1.8;
+    break;
+  case 3:
+    price = 2.5;
+    break;
+  case 4:
+    price = 3;
+    break;
+  case 5:
+    price = 3.3;
+    break;
+  default:
+    price = 1.8;
 }
+
+console.log(`You have ordered ${numOfBalls} ice cream balls and this costs ${price}$!`);
