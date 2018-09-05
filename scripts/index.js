@@ -1,32 +1,31 @@
-var name = 'Kostas';
-var age = 30;
-var profession = 'Machine learning engineer';
-var live = 'Hamburg';
+var money = 500;
+var cheapestRoom = 200;
+var isVip = true;
+var customersColor = 'orange';
 
-// String concatenation
-console.log('My name is ' + name + '. I am ' + age + ' years old. I work as a ' + profession + ' and i live in ' + live + '.');
-// String interpolation
-console.log(`My name is ${name}. I am ${age} years old. I work as a ${profession} and i live in ${live}.`);
+// money -= 400;
+var enoughMoney = money > cheapestRoom;
 
-var cashier = 300;
-var smartphone = 200;
-var laptop = 500;
-var battery = 30;
+if (enoughMoney) {
 
-var meirsPurchase = battery * 2;
-console.log(meirsPurchase);
+  if (money >= cheapestRoom * 2) {
+      if (isVip) {
+        if (customersColor === 'red') {
+          console.log('Take the red suite');
+        } else if (customersColor === 'blue') {
+          console.log('Take the blue suite');
+        } else if (customersColor === 'green') {
+          console.log('Take the green');
+        } else {
+          console.log('Take the grey');
+        }
+      } else {
+        console.log('Get the bigger room!');
+      }
+  }else {
+    console.log('Get the cheapest room!');
+  }
 
-// cashier = cashier + meirsPurchase;
-cashier += meirsPurchase;
-
-var noursPurchase = smartphone;
-
-cashier += noursPurchase;
-
-cashier += laptop * 2;
-
-var meirsBrokenBattery = -50;
-
-cashier += meirsBrokenBattery;
-
-console.log(cashier);
+} else {
+  console.log('Get another place!');
+}
