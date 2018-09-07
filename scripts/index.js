@@ -1,24 +1,31 @@
-var numOfBalls = 5;
-var price;
+var jackpot = 1000;
+var randomNumber = 93;
+var standardWinnings = 10;
 
-switch(numOfBalls) {
-  case 1:
-    price = 1;
-    break;
-  case 2:
-    price = 1.8;
-    break;
-  case 3:
-    price = 2.5;
-    break;
-  case 4:
-    price = 3;
-    break;
-  case 5:
-    price = 3.3;
-    break;
-  default:
-    price = 1.8;
+
+if (randomNumber < 500) {
+  standardWinnings = 0;
+}else if (randomNumber < 700  || randomNumber >= 800 && randomNumber < 900) {
+  standardWinnings = standardWinnings * 2;
+}else if (randomNumber < 800) {
+  switch (randomNumber) {
+    case 776:
+      standardWinnings = jackpot / 2;
+      break;
+    case 777:
+      standardWinnings = jackpot;
+      break;
+    case 778:
+      standardWinnings = jackpot / 5;
+      break;
+    default:
+      standardWinnings += 10; 
+  }
+
+} else {
+  standardWinnings = standardWinnings * 5;
 }
 
-console.log(`You have ordered ${numOfBalls} ice cream balls and this costs ${price}$!`);
+
+
+console.log(`Total Winnings: ${standardWinnings}`);
