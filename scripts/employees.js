@@ -1,9 +1,8 @@
 var cashier = 100000;
-var employeeId = 1;
 var nextPayment = 7500;
 var employees = 72;
 
-while (cashier - nextPayment >= 0) {
+for (var employeeId = 1; cashier - nextPayment >= 0; employeeId++) {
 
   if (employeeId === 1) {
     cashier -= 7500;
@@ -30,8 +29,6 @@ while (cashier - nextPayment >= 0) {
     cashier -= 4000;
     employeeId === 72 ? nextPayment = 0 : nextPayment = 4000;
   }
-
-  employeeId++;
 }
 
 console.log(`${employees - employeeId + 1} workers have not been paid. Egal, go to Bahamas! The cashier has ${cashier}$.`);
