@@ -60,6 +60,24 @@ function testResult(score, name) {
   return `${name}'s score test is ${score}. ${message}.`;
 }
 
-var jakeResult = testResult(99, 'Jake');
 
-console.log(jakeResult);
+
+
+
+
+function saveMoneyCalculator(age, ageOfRetirement, monthlyIncome, savePercentage) {
+
+  var yearsRemaining = ageOfRetirement - age;
+
+  if (age >= ageOfRetirement) {
+    return `You have already retired! What do you want here?`;
+  }
+
+  return monthlyIncome * (savePercentage / 100) * 12 * yearsRemaining;
+
+}
+
+var firstExample = saveMoneyCalculator(40, 65, 2000, 10);
+console.log(firstExample);
+var failedExample = saveMoneyCalculator(68, 62, 50000, 5);
+console.log(failedExample);
