@@ -16,6 +16,7 @@ function calculateUntilEndOfWeek(numDay) {
       break;
     case 4:
       hoursRemaining += 10;
+      break;
     case 6:
       hoursRemaining += 2;
       break;
