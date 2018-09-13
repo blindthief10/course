@@ -65,7 +65,7 @@ function testResult(score, name) {
 
 
 
-function saveMoneyCalculator(age, ageOfRetirement, monthlyIncome, savePercentage) {
+function saveMoneyCalculator(age, ageOfRetirement, monthlyIncome, savePercentage, name) {
 
   var yearsRemaining = ageOfRetirement - age;
 
@@ -73,11 +73,14 @@ function saveMoneyCalculator(age, ageOfRetirement, monthlyIncome, savePercentage
     return `You have already retired! What do you want here?`;
   }
 
-  return monthlyIncome * (savePercentage / 100) * 12 * yearsRemaining;
+  var finalResult = monthlyIncome * (savePercentage / 100) * 12 * yearsRemaining;
+  var message = `Hi my name is ${name} and in the next ${ageOfRetirement - age} years i will have ${finalResult}$ saved.`;
+
+  return message;
 
 }
 
-var firstExample = saveMoneyCalculator(40, 65, 2000, 10);
+var firstExample = saveMoneyCalculator(40, 65, 2000, 10, 'Jake');
 console.log(firstExample);
 var failedExample = saveMoneyCalculator(68, 62, 50000, 5);
 console.log(failedExample);
