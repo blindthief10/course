@@ -84,3 +84,25 @@ var firstExample = saveMoneyCalculator(40, 65, 2000, 10, 'Jake');
 console.log(firstExample);
 var failedExample = saveMoneyCalculator(68, 62, 50000, 5);
 console.log(failedExample);
+
+
+function returnSquare(num, exp) {
+  var result = num;
+  if (typeof num !== 'number' || typeof exp !== 'number') {
+    return 'Please put a number for this calculation!';
+  }
+
+  for (var i = 2; i <= exp; i++) {
+    result *=  num;
+  }
+
+  return result;
+}
+
+var fiveToPowerOfTwenty = returnSquare(5, 5);
+var tenToPowerOfTwenty = returnSquare(10, 7);
+var validateMistake = returnSquare(3, 'mistake message on purpose');
+
+console.log(fiveToPowerOfTwenty);
+console.log(tenToPowerOfTwenty);
+console.log(validateMistake);
