@@ -1,28 +1,22 @@
-var maxWeight = 10000;
-var weightIncluded = 0;
-var id = 1;
-var weightNextContainer = 10;
-var ignoredContainers = 0;
 
-
-
-while(maxWeight >= weightIncluded + weightNextContainer) {
-
+function containerCalculate(maxWeight, weightIncluded, id, weightNextContainer, ignoredContainers) {
 
   if (id <= 100) {
     if (id >= 61 && id <= 70) {
       id++;
       ignoredContainers++;
-      continue;
-    }
+    } else {
     weightIncluded += 10;
     weightNextContainer = 10;
+  }
+
   } else if (id <= 200) {
     weightIncluded += 20;
     weightNextContainer = 20;
     if (id === 111) {
       id++;
-      break;
+      console.log(`I have included ${id - ignoredContainers - 1} containers to the ship and the weight remained is ${maxWeight - weightIncluded}!`);
+      return;
     }
   } else if (id <= 250)  {
     weightIncluded += 50;
@@ -40,6 +34,12 @@ while(maxWeight >= weightIncluded + weightNextContainer) {
 
   id++;
 
+  if (maxWeight >= weightIncluded + weightNextContainer) {
+    containerCalculate(maxWeight, weightIncluded, id, weightNextContainer, ignoredContainers);
+  } else {
+    console.log(`I have included ${id - ignoredContainers - 1} containers to the ship and the weight remained is ${maxWeight - weightIncluded}!`);
+  }
+
 }
 
-console.log(`I have included ${id - ignoredContainers - 1} containers to the ship and the weight remained is ${maxWeight - weightIncluded}!`);
+containerCalculate(10000, 0, 1, 10, 0);
