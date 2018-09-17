@@ -7,21 +7,28 @@ function calculateUntilEndOfWeek(numDay) {
   switch(numDay) {
     case 1:
       hoursRemaining += 4;
+      stringExample = 'Monday, ';
       break;
     case 2:
       hoursRemaining += 6;
+      stringExample = 'Tuesday, ';
       break;
     case 3:
       hoursRemaining += 8;
+      stringExample = 'Wednesday, ';
       break;
     case 4:
       hoursRemaining += 10;
+      stringExample = 'Thursday, ';
       break;
     case 6:
       hoursRemaining += 2;
+      stringExample = 'Saturday, ';
       break;
     default:
       hoursRemaining += 0;
+      stringExample = 'Friday or Sunday.';
+      break;
   }
 
   numDay++;
@@ -34,4 +41,4 @@ function calculateUntilEndOfWeek(numDay) {
 
 }
 
-calculateUntilEndOfWeek(5);
+calculateUntilEndOfWeek(1);
