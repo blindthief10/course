@@ -1,7 +1,5 @@
 let factorial = function(num) {
-
     let result = 1;
-
     for (let i = 1; i <= num; i++) {
       result *= i;
     }
@@ -17,4 +15,14 @@ let calculateCombinations = function(x, y) {
   return totalCombinations;
 }
 
-console.log(calculateCombinations(5, 3));
+let moneyPerBet = function(budget, poolNum, startNum) {
+  return budget / calculateCombinations(poolNum, startNum);
+}
+
+console.log(moneyPerBet(20, 5, 3));
+console.log(moneyPerBet(60, 9, 7));
+
+// Immediately invoked function expressions
+let helloLanguage = (function(language) {
+  return `Hello ${language}`;
+})('Ruby');
