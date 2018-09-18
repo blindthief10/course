@@ -9,7 +9,6 @@ let factorial = function(num) {
 let calculateCombinations = function(x, y) {
   let totalCombinations = 0;
   for (let i = y; i <= x; i++) {
-
     totalCombinations += factorial(x) / (factorial(i) * factorial(x - i));
   }
   return totalCombinations;
