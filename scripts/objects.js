@@ -10,6 +10,8 @@ let jake = {
   }
 };
 
+jake.calculateAgeAfterTheseYears(20);
+
 let eugen = {
   firstName: 'Jewgeny',
   lastName: 'Kuhn',
@@ -25,7 +27,6 @@ let eugen = {
   }
 }
 
-
 let foreigner = {
   firstName: 'Chris',
   lastName: 'Evans',
@@ -36,18 +37,26 @@ let foreigner = {
   currentSalary: 0,
   countryOfResidence: 'Greece',
   countryLimit: 10,
-  allowedDoubleNationality: false,
+  allowedDoubleNationality: true,
+
   checkResidence: function() {
-    if (this.yearsOfResidence >= this.countryLimit) {
-      if (this.allowedDoubleNationality) {
-        this.secondNationality = this.countryOfResidence;
-      } else {
-        this.nationality = this.countryOfResidence;
-      }
+    this.isMarriedToLocal = true;
+
+    if (this.isMarriedToLocal) {
+      this.countryLimit = this.countryLimit / 2;
     }
-  }
+
+    if (this.yearsOfResidence >= this.countryLimit) {
+
+            if (this.allowedDoubleNationality) {
+              this.secondNationality = this.countryOfResidence;
+            } else {
+              this.nationality = this.countryOfResidence;
+            }
+
+          }
+        }
+
 }
 
 foreigner.checkResidence();
-
-console.log(foreigner);
