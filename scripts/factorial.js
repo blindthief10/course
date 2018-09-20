@@ -20,8 +20,3 @@ let moneyPerBet = function(budget, poolNum, startNum) {
 
 console.log(moneyPerBet(20, 5, 3));
 console.log(moneyPerBet(60, 9, 7));
-
-// Immediately invoked function expressions
-let helloLanguage = (function(language) {
-  return `Hello ${language}`;
-})('Ruby');
