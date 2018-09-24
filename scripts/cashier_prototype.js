@@ -11,19 +11,28 @@ let shop = {
     let enoughJeans = numOfJeans <= shop.jeansStock;
     let enoughJackets = numOfJackets <= shop.jacketStock;
 
-      if (enoughShirts && enoughJeans && enoughJackets) {
-        let costOrder = numOfShirts * shop.tshirtPrice + numOfJeans * shop.jeansPrice + numOfJackets * shop.jacketPrice;
-        this.numOfSales += 1;
-        this.cashierBalance += costOrder;
-        shop.balance += costOrder;
-        shop.tshirtStock -= numOfShirts;
-        shop.jeansStock -= numOfJeans;
-        shop.jacketStock -= numOfJackets;
-        console.log(`The cashier with id ${this.id} and more specifically ${this.employee} has made a new sale! The balance of this cashier now is ${this.cashierBalance} $.`);
-        console.log(`After this sale the total balance of the shop is ${shop.balance}$`);
-      } else {
-        console.log(`I am sorry the order was not possible due to shortage of one or more of the requested materials.`);
-      }
+    if (!enoughShirts) {
+      numOfShirts = shop.tshirtStock;
+    }
+
+    if (!enoughJeans) {
+      numOfJeans = shop.jeansStock;
+    }
+
+    if (!enoughJackets) {
+      numOfJackets = shop.jacketStock;
+    }
+
+
+    let costOrder = numOfShirts * shop.tshirtPrice + numOfJeans * shop.jeansPrice + numOfJackets * shop.jacketPrice;
+    this.numOfSales += 1;
+    this.cashierBalance += costOrder;
+    shop.balance += costOrder;
+    shop.tshirtStock -= numOfShirts;
+    shop.jeansStock -= numOfJeans;
+    shop.jacketStock -= numOfJackets;
+    console.log(`The cashier with id ${this.id} and more specifically ${this.employee} has made a new sale! The balance of this cashier now is ${this.cashierBalance} $.`);
+    console.log(`After this sale the total balance of the shop is ${shop.balance}$`);
   },
   refund: function(numOfShirts, numOfJeans, numOfJackets) {
     let costOrder = numOfShirts * shop.tshirtPrice + numOfJeans * shop.jeansPrice + numOfJackets * shop.jacketPrice;
