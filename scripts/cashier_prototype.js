@@ -25,6 +25,10 @@ let shop = {
 
 
     let costOrder = numOfShirts * shop.tshirtPrice + numOfJeans * shop.jeansPrice + numOfJackets * shop.jacketPrice;
+    if (costOrder === 0) {
+      console.log('Its not possible to make this sale because the requested material is not there.');
+      return;
+    }
     this.numOfSales += 1;
     this.cashierBalance += costOrder;
     shop.balance += costOrder;
