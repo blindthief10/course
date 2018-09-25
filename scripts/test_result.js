@@ -20,3 +20,15 @@ let calculateFailurePercentage = function(collection, basis) {
 }
 
 console.log(calculateFailurePercentage(testResults, 50));
+
+let favoriteAnimals = ['Pandas', 'Tigers', 'Elephants'];
+let favoriteFoods = ['Gyros', 'Pastitsio', 'Souvlaki'];
+let favoriteCities = ['Hamburg', 'Zurich', 'Athens', 'Damascus'];
+
+let favoriteThings = favoriteAnimals.concat(favoriteFoods, favoriteCities);
+
+if (favoriteCities.includes('Geneve')) {
+  console.log('The man has class!');
+} else {
+  console.log('Raise your standards mate!');
+}
