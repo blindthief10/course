@@ -2,7 +2,7 @@ let schoolTeachers = {
   math: 'Mauro Cifuentes',
   science: 'Carmine Tambascia',
   history: 'Meir Overferst',
-  geography: 'Marcelo Ramirez' 
+  geography: 'Marcelo Ramirez'
 };
 
 let daniel = ['Daniel Cipolla', 'JavaScript', 'PHP', 'Ruby', 'C++'];
@@ -17,3 +17,12 @@ let compareCandidateSkills = function(first, second) {
 }
 
 compareCandidateSkills(daniel, sue);
+
+
+let namesOfStudentsDci = ['Mauro', 'Ali', 'Eugen', 'Jens', 'Marcelo', 'Mohammed'];
+
+let bundesligaTeams = ['Bayern', 'Dortmund', 'Leipzig', 'Freiburg'];
+
+console.log(bundesligaTeams.length > namesOfStudentsDci.length);
+
+console.log(bundesligaTeams[bundesligaTeams.length - 1]);
