@@ -37,13 +37,14 @@ let calculateMargin = function(firstAverage, secondAverage) {
 calculateMargin(averageForTenStudents, averageForElevenStudents);
 
 let calculateMax = function(array) {
-  let biggest = array[0];
   for (let i = 1; i < array.length; i++) {
-    if (array[i] >= biggest) {
-      biggest = array[i];
+    if (array[i] > array[0]) {
+      let temp = array [0]
+      array[0] = array[i];
+      array[i] = temp;
     }
   }
-  return biggest;
+  return array[0];
 }
 
 let maxOfStudents = calculateMax(studentsResults);
