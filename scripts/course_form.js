@@ -1,14 +1,16 @@
+let profession = {profession: 'Student'};
+
 let Student = function(fullName, course, satisfaction) {
   this.fullName = fullName;
   this.course = course;
   this.satisfaction = satisfaction;
   this.interpretFeel = function() {
     if (this.satisfaction > 80) {
-      this.mood = 'He/she found the course perfect.';
+      this.mood = `${this.fullName} found the course perfect.`;
     } else if (this.satisfaction >= 50) {
-      this.mood = 'He/she is content with the course overall.';
+      this.mood = `${this.fullName} is content with the course overall.`;
     } else {
-      this.mood = 'Keeps complaining. Potential refund is coming.';
+      this.mood = `${this.fullName} keeps complaining. Potential refund is coming.`;
     }
   }
 }
@@ -26,7 +28,12 @@ let murhaf = new Student('Murhaf Orfali', 'PHP course', 94);
 
 let studentsTogether = [mauro, eugen, meir, mohLah, mohWah, nour, carmine, ali, jens, murhaf];
 
-for (let student of studentsTogether) {
-  student.interpretFeel();
-  console.log(student.mood);
+let addMood = function(array) {
+  for (let student of array) {
+    Object.setPrototypeOf(student, profession);
+    student.interpretFeel();
+    console.log(student.mood);
+  }
 }
+
+addMood(studentsTogether);
