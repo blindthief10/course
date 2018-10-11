@@ -35,3 +35,19 @@ let februaryDate = new Date('Feb 23 2020');
 
 console.log(howManyDaysRemain(currentDate));
 console.log(howManyDaysRemain(februaryDate));
+
+// Last day of each month.
+
+/*
+
+To calculate what kind of day every month on a given year has, you need to grab
+the last date of each month of the given year.
+That is not so easy, since every month has different number of days.
+Bear in mind though, that every month has a followed month that for sure has a First
+day, and whose date you already know (it is the first date!!).
+Maybe you can grab this day for every month of the year (repeated code here?) and set it's
+date to it's previous day (by subtracting 1).
+Once you have the date of the last day of the month, you can easily have it's day by using
+the getDay function.
+
+*/
