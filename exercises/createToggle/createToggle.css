@@ -29,3 +29,15 @@ ul li {
   background: green;
   color: white;
 }
+
+p {
+  font-family: verdana;
+  font-size: 1.5vw;
+  margin-top: 0.5vw;
+  background: #ccc;
+  line-height: 2.5vw;
+  padding: 1vw 4vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
