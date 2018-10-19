@@ -12,11 +12,7 @@ let scrollDown = function(ev, iterator) {
   }
 
   let scrollDownToSection = setInterval(function() {
-    if (iterator === movies.length - 1)  {
-    makeScroll(1308, scrollDownToSection);
-  } else {
-    makeScroll(movies[iterator].offsetTop, scrollDownToSection);
-    }
+    iterator === movies.length - 1 ? makeScroll(1308, scrollDownToSection) : makeScroll(movies[iterator].offsetTop, scrollDownToSection)
   }, 1)
 
 }
