@@ -11,15 +11,14 @@ let scrollDown = function(ev, iterator) {
     }
   }
 
-  if (iterator === movies.length - 1) {
-    let scrollDownToSection = setInterval(function() {
-      makeScroll(1308, scrollDownToSection);
-    }, 1);
+  let scrollDownToSection = setInterval(function() {
+    if (iterator === movies.length - 1)  {
+    makeScroll(1308, scrollDownToSection);
   } else {
-    let scrollDownToSection = setInterval(function() {
-      makeScroll(movies[iterator].offsetTop, scrollDownToSection);
-    }, 1);
-  }
+    makeScroll(movies[iterator].offsetTop, scrollDownToSection);
+    }
+  }, 1)
+
 }
 
 for(let i = 0; i < links.length; i++) {
