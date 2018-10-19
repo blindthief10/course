@@ -1,16 +1,29 @@
 let links = document.querySelectorAll('a');
 let movies = document.querySelectorAll('section');
 
-let forrestGumpLink = links[3];
-
-let runForrest = function(ev) {
+let scrollDown = function(ev, iterator) {
   ev.preventDefault();
-  let scrollDownToForrest = setInterval(function () {
+
+  let makeScroll = function(limit, fn) {
     window.scrollBy(0, 4);
-    if (window.pageYOffset >= 1184) {
-      clearInterval(scrollDownToForrest);
+    if (window.pageYOffset >= limit) {
+      clearInterval(fn);
     }
-  }, 1)
+  }
+
+  if (iterator === movies.length - 1) {
+    let scrollDownToSection = setInterval(function() {
+      makeScroll(1308, scrollDownToSection);
+    }, 1);
+  } else {
+    let scrollDownToSection = setInterval(function() {
+      makeScroll(movies[iterator].offsetTop, scrollDownToSection);
+    }, 1);
+  }
 }
 
-forrestGumpLink.addEventListener('click', runForrest);
+for(let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function(ev) {
+    scrollDown(ev, i);
+  });
+}
