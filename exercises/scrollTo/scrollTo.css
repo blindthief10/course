@@ -8,7 +8,7 @@ nav {
   margin-bottom: 2vw;
 }
 
-nav a {
+nav > li {
   font-size: 2.1vw;
   padding: 1.2vw 1.5vw;
   font-family: 'Comic sans';
@@ -16,9 +16,22 @@ nav a {
   color: white;
   flex-grow: 1;
   text-align: center;
+  align-items: center;
 }
 
-nav a:hover {
+nav li {
+  list-style-type: none;
+}
+
+ul {
+  display: none;
+}
+
+.active {
+  display: block; 
+}
+
+nav > li:hover {
   background: black;
   color: cyan;
 }

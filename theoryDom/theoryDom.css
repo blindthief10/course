@@ -1,0 +1,13 @@
+p {
+  font-size: 2vw;
+  font-family: 'Franklin Gothic';
+  color: purple;
+  background: #ccc;
+  padding: 1.5vw 10vw;
+  line-height: 3vw;
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
