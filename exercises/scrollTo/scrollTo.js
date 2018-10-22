@@ -1,24 +1,30 @@
 let links = document.querySelectorAll('a');
 let movies = document.querySelectorAll('section');
 
-let scrollDown = function(ev, iterator) {
-  ev.preventDefault();
 
-  let makeScroll = function(limit, fn) {
-    window.scrollBy(0, 4);
-    if (window.pageYOffset >= limit) {
-      clearInterval(fn);
-    }
+let scrollDown = function(pos, fn) {
+  if (window.pageYOffset >= pos) {
+    clearInterval(fn);
   }
-
-  let scrollDownToSection = setInterval(function() {
-    iterator === movies.length - 1 ? makeScroll(1308, scrollDownToSection) : makeScroll(movies[iterator].offsetTop, scrollDownToSection)
-  }, 1)
-
+  window.scrollBy(0, 5);
 }
 
-for(let i = 0; i < links.length; i++) {
+
+for (let i = 0; i < links.length; i++) {
   links[i].addEventListener('click', function(ev) {
-    scrollDown(ev, i);
-  });
+    ev.preventDefault();
+
+    if (i === movies.length - 1) {
+      let interval = setInterval(function() {
+          scrollDown(movies[i].offsetTop - 175, interval);
+      }, 1)
+    }else {
+        let interval =setInterval(function() {
+          scrollDown(movies[i].offsetTop, interval);
+        }, 1)
+    }
+
+
+  })
+
 }
