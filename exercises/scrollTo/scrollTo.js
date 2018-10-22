@@ -1,16 +1,28 @@
 let links = document.querySelectorAll('a');
 let movies = document.querySelectorAll('section');
 
-let forrestGumpLink = links[3];
-
-let runForrest = function(ev) {
-  ev.preventDefault();
-  let scrollDownToForrest = setInterval(function () {
-    window.scrollBy(0, 4);
-    if (window.pageYOffset >= 1184) {
-      clearInterval(scrollDownToForrest);
-    }
-  }, 1)
+let scrollDown = function(pos, fn) {
+  if (window.pageYOffset >= pos) {
+    clearInterval(fn);
+  }
+  window.scrollBy(0, 5);
 }
 
-forrestGumpLink.addEventListener('click', runForrest);
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function(ev) {
+    ev.preventDefault();
+
+    if (i === movies.length - 1) {
+      let interval = setInterval(function() {
+          scrollDown(movies[i].offsetTop - 175, interval);
+      }, 1)
+    }else {
+        let interval =setInterval(function() {
+          scrollDown(movies[i].offsetTop, interval);
+        }, 1)
+    }
+
+
+  })
+}
