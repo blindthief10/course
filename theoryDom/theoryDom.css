@@ -11,3 +11,8 @@ p {
 .invisible {
   display: none;
 }
+
+body {
+  border: 1px solid black;
+  height: 1000px;
+}

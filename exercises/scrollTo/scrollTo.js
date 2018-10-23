@@ -1,24 +1,28 @@
 let titles = document.querySelectorAll('nav > li');
 let lists = document.querySelectorAll('ul');
 
-for (let i = 0; i < titles.length; i++) {
-  titles[i].addEventListener('click', function(ev) {
+let checkAndRemoveClass = function(listOfElements, classToCheck) {
+  for (let j = 0; j < listOfElements.length; j++) {
+    if (listOfElements[j].classList.contains(classToCheck)) {
+      listOfElements[j].classList.remove(classToCheck);
+      return;
+    }
+  }
+}
+
+for (let i = 0; i < headings.length; i++) {
+  headings[i].addEventListener('click', function(ev) {
     ev.stopPropagation();
-    for (let j = 0; j < lists.length; j++) {
-      if (lists[j].classList.contains('active')) {
-        lists[j].classList.remove('active');
+    for (let j = 0; j < paragraphs.length; j++) {
+      if (paragraphs[j].classList.contains('active')) {
+        paragraphs[j].classList.remove('active');
         break;
       }
     }
-    lists[i].classList.add('active');
+    paragraphs[i].classList.add('active');
   })
 }
 
 document.body.addEventListener('click', function() {
-  for (let j = 0; j < lists.length; j++) {
-    if (lists[j].classList.contains('active')) {
-      lists[j].classList.remove('active');
-      break;
-    }
-  }
+  checkAndRemoveClass(lists, 'active');
 })
