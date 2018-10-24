@@ -1,10 +1,10 @@
 let pills = document.querySelectorAll('li');
 let movies = document.querySelectorAll('section');
 
-let checkAndRemoveClass = function(collection, classToCheck) {
-  for (let k = 0; k < collection.length; k++) {
-    if (collection[k].classList.contains(classToCheck)) {
-      collection[k].classList.remove(classToCheck);
+let checkAndRemoveClass = function(array, classToCheck) {
+  for (let k = 0; k < array.length; k++) {
+    if (array[k].classList.contains(classToCheck)) {
+      array[k].classList.remove(classToCheck);
       break;
     }
   }

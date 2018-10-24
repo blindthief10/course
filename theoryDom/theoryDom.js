@@ -1,13 +1,13 @@
-let button = document.querySelector('button');
+let input = document.querySelector('input');
+let btn = document.querySelector('button');
 let paragraph = document.querySelector('p');
+let checkbox = document.querySelector('input[type="checkbox"]');
 
-button.addEventListener('click', function(ev) {
-  ev.stopPropagation();
-  paragraph.classList.toggle('invisible');
-  console.log('The button is clicked');
+input.addEventListener('keyup', function(ev) {
+  let val = input.value;
+  val ? paragraph.innerHTML = val : paragraph.innerHTML = input.placeholder
 })
 
-document.body.addEventListener('click', function() {
-  document.body.style.background = 'deepskyblue';
-  console.log('The body is clicked');
+checkbox.addEventListener('click', function(ev) {
+  checkbox.checked ? input.type = 'password' : input.type = 'text'
 })

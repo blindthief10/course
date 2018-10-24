@@ -14,10 +14,55 @@ section {
   left: 0;
 }
 
-button:focus ~ section {
-  display: block;
+section div {
+  width: 50%;
+  height: 25vw;
+  background: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
 }
 
-section img {
-  margin-top: 10%;
+span {
+  position: absolute;
+  top: 0;
+  right: 0.5vw;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+section div input {
+  font-size: 2vw;
+  padding: 1.5vw 1vw;
+  width: 80%;
+}
+
+label {
+  font-size: 2vw;
+  font-family: tahoma;
+  color: black;
+}
+
+section div button {
+  font-size: 2.5vw;
+  padding: 1.5vw 1vw;
+  background: red;
+  color: white;
+  border-radius: 0.5vw;
+  border: none;
+}
+
+.showOff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  margin:0;
+  height: 100vw;
 }
