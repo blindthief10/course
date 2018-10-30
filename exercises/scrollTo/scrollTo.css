@@ -6,6 +6,9 @@ nav {
   display: flex;
   background: deepskyblue;
   margin-bottom: 2vw;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 nav > li {
@@ -59,6 +62,12 @@ section {
   margin: 5vw auto;
   border: 0.1vw solid black;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+section:first-of-type {
+  opacity: 1;
 }
 
 section h3, section p {
@@ -74,4 +83,14 @@ section p {
 section img {
   width: 35%;
   height: 25vw;
+}
+
+.changeColor {
+  background: black;
+  color: cyan;
+}
+
+section:last-of-type {
+  height: 50vw;
+  visibility: hidden;
 }

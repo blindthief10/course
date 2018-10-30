@@ -1,41 +1,24 @@
 let titles = document.querySelectorAll('nav > li');
-let lists = document.querySelectorAll('ul');
-let movies = document.querySelectorAll('section');
+let posters = document.querySelectorAll('section');
+let nav = document.querySelector('nav');
 
-let moviesOffset = [];
-let movieTitles = [];
-
- for (let i = 0; i < movies.length; i++) {
-  moviesOffset.push(movies[i].offsetTop);
-  movieTitles.push(titles[i].innerText);
-}
-
-let checkAndRemoveClass = function(listOfElements, classToCheck) {
-  for (let j = 0; j < listOfElements.length; j++) {
-    if (listOfElements[j].classList.contains(classToCheck)) {
-      listOfElements[j].classList.remove(classToCheck);
-      return;
-    }
-  }
-}
-
-for (let i = 0; i < titles.length; i++) {
-  titles[i].addEventListener('click', function(ev) {
-    ev.stopPropagation();
-    checkAndRemoveClass(lists, 'active');
-    lists[i].classList.add('active');
-  })
-}
-
-
-document.body.addEventListener('click',  function() {
-  checkAndRemoveClass(lists, 'active');
-});
+let heightToExecute = nav.clientHeight + 250;
 
 window.addEventListener('scroll', function(ev) {
-  for (let k = 0; k < moviesOffset.length; k++) {
-    if (window.pageYOffset >= moviesOffset[k] && window.pageYOffset < moviesOffset[k + 1]) {
-      console.log(`You are watching ${movieTitles[k]}!`);
+
+  for (let i = 0; i < posters.length; i++) {
+
+    if (window.pageYOffset >= posters[i].offsetTop - heightToExecute && window.pageYOffset < posters[i+1].offsetTop - heightToExecute) {
+      for (let j = 0; j < titles.length; j++) {
+        if (titles[j].classList.contains('changeColor')) {
+          titles[j].classList.remove('changeColor');
+          break;
+        }
+      }
+      titles[i].classList.add('changeColor');
+      posters[i].style.opacity = '1';
     }
+
   }
+
 })
