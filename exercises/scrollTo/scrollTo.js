@@ -6,7 +6,7 @@ let heightToExecute = nav.clientHeight + 250;
 
 window.addEventListener('scroll', function(ev) {
 
-  for (let i = 0; i < posters.length; i++) {
+  for (let i = 0; i < posters.length; i++) { 
 
     if (window.pageYOffset >= posters[i].offsetTop - heightToExecute && window.pageYOffset < posters[i+1].offsetTop - heightToExecute) {
       for (let j = 0; j < titles.length; j++) {
