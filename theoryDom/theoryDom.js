@@ -1,11 +1,12 @@
 let input = document.querySelector('input');
-let btn = document.querySelector('button');
+let button = document.querySelector('button');
 let article = document.querySelector('article');
 let checkbox = document.querySelector('input[type="checkbox"]');
 let paragraphs = document.querySelectorAll('p');
 let image = document.querySelector('img');
 let selectFields = document.querySelectorAll('select');
 let link = document.querySelector('a');
+let textarea = document.querySelector('textarea');
 
 input.addEventListener('keyup', function(ev) {
   let val = input.value;
@@ -19,11 +20,21 @@ checkbox.addEventListener('click', function(ev) {
 
 selectFields[0].addEventListener('change', function(ev) {
   let selectedValue = selectFields[0].value;
-  image.src = `../images/${selectedValue}.jpg`;
+  image.src = `${selectedValue}.jpg`;
 })
 
 
 selectFields[1].addEventListener('change', function(ev) {
   link.innerHTML = `Go to <span>${ev.currentTarget.value}</span>`;
   link.href =  `https://www.${ev.currentTarget.value}.com`;
+})
+
+
+
+button.addEventListener('click', function(ev) {
+  let text = textarea.value;
+  let newParagraph = document.createElement('P');
+  newParagraph.innerText = text;
+  document.body.appendChild(newParagraph);
+  textarea.value = '';
 })
