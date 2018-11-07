@@ -36,10 +36,29 @@ div {
    color: red;
  }
 
+ .but {
+   color: white;
+   position: absolute;
+   top: 0.2vw;
+   right: 0;
+   font-size: 5vw;
+   opacity: 0.3;
+   transition: opacity 0.4s ease-out;
+ }
+
+ .but:hover {
+   cursor: pointer;
+ }
+
 p {
   background: green;
   color: white;
   padding: 3vw;
   font-size:2vw;
   line-height: 2vw;
+  position: relative;
+}
+
+p:hover .but {
+  opacity: 1;
 }

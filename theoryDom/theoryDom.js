@@ -32,16 +32,23 @@ document.addEventListener('DOMContentLoaded', function(ev) {
     console.log(ev.currentTarget);
   })
 
+
   button.addEventListener('click', function(ev) {
     let text = textarea.value;
     let newParagraph = document.createElement('P');
-    newParagraph.innerText = text;
+    newParagraph.innerHTML = `${text}<span class="but">&times;</span>`;
     document.body.appendChild(newParagraph);
     textarea.value = '';
-    
-    newParagraph.addEventListener('click', function(ev) {
-      document.body.removeChild(ev.currentTarget);
-    })
-  })
 
+    let spans = document.querySelectorAll('.but');
+
+    for (let i = 0; i < spans.length; i++) {
+      spans[i].addEventListener('click', function(ev) {
+        let spanClicked = ev.currentTarget;
+        let parentOfTheSpan = spanClicked.parentElement;
+        parentOfTheSpan.parentElement.removeChild(parentOfTheSpan);
+      })
+    }
+
+  })
 })
