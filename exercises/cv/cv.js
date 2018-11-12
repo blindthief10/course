@@ -23,7 +23,10 @@ form.addEventListener('submit', function(ev) {
   h3.innerText = userNameValue;
 
   let birthdayParagraph = document.createElement('P');
-  birthdayParagraph.innerHTML = `Born at: <b>${birthdayValue}</b>`;
+  let birthdayObject = new Date(birthdayValue);
+  let today = new Date();
+  let ageCustomer = today.getFullYear() - birthdayObject.getFullYear();
+  birthdayParagraph.innerHTML = `${userNameValue} is <b>${ageCustomer}</b> years old`;
 
   let image = document.createElement('IMG');
   let newPath = pictureSource.replace(`C:\\fakepath\\`, baseUrl);
@@ -62,9 +65,6 @@ form.addEventListener('submit', function(ev) {
   section.appendChild(languagesParagraph);
 
   document.body.appendChild(section);
-
-
-
 
   spanCloseButton.addEventListener('click', function(event) {
     document.body.removeChild(event.currentTarget.parentElement);
