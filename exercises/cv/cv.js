@@ -1,59 +1,72 @@
-let fullName = document.querySelector('input[type="text"]');
-let birthday = document.querySelector('input[type="date"]');
-let file = document.querySelector('input[type="file"]');
-let favColor = document.querySelector('#primaryColor');
-let secColor = document.querySelector('#secondaryColor');
-let form = document.querySelector('form');
-let textarea = document.querySelector('textarea');
-let button = document.querySelector('button');
-let baseImageURL = '../../images/';
-let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const username = document.querySelector('input[type="text"]'),
+      birthdayDate = document.querySelector('input[type="date"]'),
+      picture = document.querySelector('input[type="file"]'),
+      primaryColor = document.getElementById('primaryColor'),
+      secondaryColor = document.querySelector('#secondaryColor'),
+      textarea = document.querySelector('textarea'),
+      checkboxes = document.querySelectorAll('input[type="checkbox"]'),
+      form = document.querySelector('form'),
+      baseUrl = '../../images/';
 
 form.addEventListener('submit', function(ev) {
   ev.preventDefault();
+  let userNameValue = username.value;
+  let birthdayValue = birthdayDate.value;
+  let pictureSource = picture.value;
+  let primaryColorValue = primaryColor.value;
+  let secondaryColorValue = secondaryColor.value;
+  let textareaMessage = textarea.value;
+
   let section = document.createElement('SECTION');
-  let heading = document.createElement('H3');
-  let bday = document.createElement('P');
+
+  let h3  = document.createElement('H3');
+  h3.innerText = userNameValue;
+
+  let birthdayParagraph = document.createElement('P');
+  birthdayParagraph.innerHTML = `Born at: <b>${birthdayValue}</b>`;
+
   let image = document.createElement('IMG');
+  let newPath = pictureSource.replace(`C:\\fakepath\\`, baseUrl);
+  image.src = newPath;
+
   let article = document.createElement('ARTICLE');
-  let spanClose = document.createElement('SPAN');
-  let skillsParagraph = document.createElement('P');
+  article.innerText = textareaMessage;
 
-  let imageURL = file.value.substr(file.value.lastIndexOf('\\'), file.value.length - 1);
-  let unifiedURL = imageURL.split('');
-  unifiedURL.shift();
-  let endString = baseImageURL + unifiedURL.join('');
+  section.style.background = primaryColorValue;
+  section.style.color = secondaryColorValue;
 
-  heading.innerText = fullName.value;
-  bday.innerHTML = `Born at: <b>${birthday.value}</b>`;
-  image.src = endString;
-  article.innerText = textarea.value;
+  let spanCloseButton = document.createElement('SPAN');
+  spanCloseButton.innerText = 'X';
 
-  section.style.background = favColor.value;
-  section.style.color = secColor.value;
-
-  let skills = [];
+  let programmingSkills = [];
 
   for (let i = 0; i < checkboxes.length; i++) {
+
     if (checkboxes[i].checked) {
-      skills.push(checkboxes[i].parentElement.innerText);
+        programmingSkills.push(checkboxes[i].parentElement.innerText);
     }
+
   }
 
-  skillsParagraph.innerText = `Programming Skills: ${skills.join(', ')}`;
+  let languagesString = programmingSkills.join(', ');
 
-  spanClose.innerText = 'X';
+  let languagesParagraph = document.createElement('P');
+  languagesParagraph.innerText = `The programming skills of ${userNameValue} are: ${languagesString}`;
 
-  section.appendChild(heading);
-  section.appendChild(bday);
+
+  section.appendChild(h3);
+  section.appendChild(birthdayParagraph);
   section.appendChild(image);
   section.appendChild(article);
-  section.appendChild(spanClose);
-  section.appendChild(skillsParagraph);
+  section.appendChild(spanCloseButton);
+  section.appendChild(languagesParagraph);
 
   document.body.appendChild(section);
 
-  spanClose.addEventListener('click', function(event) {
+
+
+
+  spanCloseButton.addEventListener('click', function(event) {
     document.body.removeChild(event.currentTarget.parentElement);
   })
 
