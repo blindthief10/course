@@ -6,7 +6,10 @@ const username = document.querySelector('input[type="text"]'),
       textarea = document.querySelector('textarea'),
       checkboxes = document.querySelectorAll('input[type="checkbox"]'),
       form = document.querySelector('form'),
-      baseUrl = '../../images/';
+      baseUrl = '../../images/',
+      charactersAllowed = 140,
+      paragraphTextareaMessage = document.querySelector('p.countermessage');
+
 
 form.addEventListener('submit', function(ev) {
   ev.preventDefault();
@@ -70,4 +73,35 @@ form.addEventListener('submit', function(ev) {
     document.body.removeChild(event.currentTarget.parentElement);
   })
 
+})
+
+username.addEventListener('invalid', function(ev) {
+  ev.preventDefault();
+  ev.currentTarget.setCustomValidity('Were you born without a name?');
+  ev.currentTarget.nextElementSibling.innerText = ev.currentTarget.validationMessage;
+  ev.currentTarget.setCustomValidity('');
+})
+
+username.addEventListener('keyup', function(ev) {
+  ev.currentTarget.checkValidity();
+})
+
+birthdayDate.addEventListener('invalid', function(ev) {
+  ev.preventDefault();
+  ev.currentTarget.setCustomValidity('Go and drink your milk kiddy!');
+  ev.currentTarget.nextElementSibling.innerText = ev.currentTarget.validationMessage;
+  ev.currentTarget.setCustomValidity('');
+})
+
+birthdayDate.addEventListener('change', function(ev) {
+  ev.currentTarget.checkValidity();
+})
+
+textarea.addEventListener('keyup', function(ev) {
+  let charactersRemained = charactersAllowed - textarea.value.length;
+  paragraphTextareaMessage.innerText = `You have ${charactersRemained} left!`;
+  if (charactersRemained === 0) {
+    paragraphTextareaMessage.innerText = `End of story`;
+    paragraphTextareaMessage.style.color = 'red';
+  }
 })

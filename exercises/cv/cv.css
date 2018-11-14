@@ -1,5 +1,27 @@
 input, textarea {
   margin: 1vw;
+  display: block;
+}
+
+input:invalid {
+  border: 0.2vw solid red;
+}
+
+input:invalid + p.error {
+  display: block;
+}
+
+p.countermessage {
+  color: blue;
+}
+
+p.error {
+  display: none;
+  color: red;
+}
+
+input[type="checkbox"], input[type="color"] {
+  display: inline-block;
 }
 
 textarea {
