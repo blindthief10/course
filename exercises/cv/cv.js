@@ -98,10 +98,14 @@ birthdayDate.addEventListener('change', function(ev) {
 })
 
 textarea.addEventListener('keyup', function(ev) {
+  ev.currentTarget.checkValidity();
   let charactersRemained = charactersAllowed - textarea.value.length;
   paragraphTextareaMessage.innerText = `You have ${charactersRemained} left!`;
   if (charactersRemained === 0) {
     paragraphTextareaMessage.innerText = `End of story`;
     paragraphTextareaMessage.style.color = 'red';
+  } else {
+    paragraphTextareaMessage.style.color = 'blue';
   }
+  ev.currentTarget.checkValidity();
 })
