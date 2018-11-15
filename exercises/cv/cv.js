@@ -90,6 +90,7 @@ birthdayDate.addEventListener('invalid', function(ev) {
   ev.preventDefault();
   ev.currentTarget.setCustomValidity('Go and drink your milk kiddy!');
   ev.currentTarget.nextElementSibling.innerText = ev.currentTarget.validationMessage;
+  birthdayDate.focus();
   ev.currentTarget.setCustomValidity('');
 })
 
