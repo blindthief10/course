@@ -35,12 +35,14 @@ let passwordRegex = /^[a-ü]{5,20}$/i;
 let phone1 = '0049 15770452536';
 let phone2 = '015770452536';
 let phone3 = '00491577 0452536';
+let phone4 = '004915 77 04 52 5 36';
 
-let regexCellphone = /^(0049|0)[\s\-]?\d{4}\s?\d{7}$/i;
+let regexCellphone = /^(0049|0)\s?(\d\s?){11}$/i;
 
-console.log(regexCellphone.test(phone1));
-console.log(regexCellphone.test(phone2));
-console.log(regexCellphone.test(phone3));
+// console.log(regexCellphone.test(phone1));
+// console.log(regexCellphone.test(phone2));
+// console.log(regexCellphone.test(phone3));
+// console.log(regexCellphone.test(phone4));
 
 let firstMail = 'kostas#diakogianni$23@gmail.com';
 let secondMail = '';
@@ -49,3 +51,21 @@ let thirdMail = '';
 let mailRegex = /^[\w$\.#]{4,50}@[a-z]{4,20}\.(com|org|net)$/i;
 
 // console.log(mailRegex.test(firstMail));
+
+let firstUrl = 'https://www.twitter.com';
+let secondUrl = 'http://www.google25.de';
+let thirdUrl = 'ftp://www.nobodycares.com';
+let fourthUrl = 'http://www.nobodycares.comman';
+
+let urlRegex = /^https?:\/{2}w{3}\.[\w\-]{2,50}\.[a-z]{2,4}$/i;
+
+// console.log(urlRegex.test(firstUrl));
+// console.log(urlRegex.test(secondUrl));
+// console.log(urlRegex.test(thirdUrl));
+// console.log(urlRegex.test(fourthUrl));
+
+let textQuote = 'Pussycat dolls';
+
+let boundaryRegex = /cat\b/i;
+
+console.log(boundaryRegex.test(textQuote));
