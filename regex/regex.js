@@ -64,8 +64,8 @@ let urlRegex = /^https?:\/{2}w{3}\.[\w\-]{2,50}\.[a-z]{2,4}$/i;
 // console.log(urlRegex.test(thirdUrl));
 // console.log(urlRegex.test(fourthUrl));
 
-let bear = 'bear, I love watching bears fishing salmon in Kamtchaka. My morning routine is to shave my beard. The heat is unbearable';
+let textQuote = 'Pussycat dolls';
 
-let bearRegex = /\bbears?\b/ig
+let boundaryRegex = /cat\b/i;
 
-console.log(bear.match(bearRegex));
+console.log(boundaryRegex.test(textQuote));
