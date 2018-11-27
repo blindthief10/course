@@ -1,55 +1,25 @@
-// Use the fetch api to brng data
-let exampleUrl = 'https://reqres.in/api/users';
-let btn = document.querySelector('button');
+const btn = document.querySelector('button');
+const form = document.querySelector('form');
 
-let getUsers = ev => {
-  fetch(exampleUrl)
-    .then(response => response.json())
-    .then(obj => {
-      console.log(obj.data);
-      for (let user of obj.data) {
-        let section = document.createElement('SECTION');
-        let firstHeading = document.createElement('H3');
-        let secondHeading = document.createElement('H3');
-        let image = document.createElement('IMG');
-        firstHeading.innerText = user.first_name;
-        secondHeading.innerText = user.last_name;
-        image.src = user.avatar;
-        section.appendChild(firstHeading);
-        section.appendChild(secondHeading);
-        section.appendChild(image);
-        document.body.appendChild(section);
-      }
-    })
-}
+const colorTemps = [
+  {highestTemp: 40, color: 'red'},
+  {highestTemp: 35, color: 'orange'},
+  {highestTemp: 30, color: 'yellow'},
+  {highestTemp: 20, color: 'deepskyblue'},
+  {highestTemp: 10, color: 'purple'},
+  {highestTemp: 0, color: 'grey'},
+  {highestTemp: -100, color: 'white'}
+];
 
-let commentUrl = 'http://35.156.88.18:3050/comments';
+console.log();
 
-let bringComments = ev => {
-  fetch(commentUrl)
-    .then(res => res.json())
-    .then(commentsInfo => {
-      for (let commentInfo of commentsInfo) {
-        let section = document.createElement('SECTION');
-        let headingName = document.createElement('H3');
-        let comment = document.createElement('P');
-        headingName.innerText = commentInfo.name;
-        comment.innerText = commentInfo.body;
-        section.appendChild(headingName);
-        section.appendChild(comment);
-        document.body.appendChild(section);
-      }
-    })
-    .catch(err => {
-      console.log(err);
-    })
-}
 const authToken = '16d4785f9c10724266053adb3c29dcfd';
 
 let inputField = document.querySelector('input');
 let divContainer = document.querySelector('#container');
 
 let getWeatherForCity = ev => {
+  ev.preventDefault();
   let city = inputField.value;
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${authToken}`;
   fetch(weatherUrl)
@@ -59,23 +29,28 @@ let getWeatherForCity = ev => {
       let section = document.createElement('SECTION');
       let heading = document.createElement('H3');
       let tempParagraph = document.createElement('P');
-      let descriptionFooter = document.createElement('FOOTER');
+      let desc = document.createElement('SPAN');
+      let littleImage = document.createElement('IMG');
+      let footer = document.createElement('FOOTER');
+      let tempInCelsius = Math.round(weatherData.main.temp - 273);
+      let color = colorTemps.find(temp => tempInCelsius > temp.highestTemp).color;
       heading.innerText = weatherData.name;
-      tempParagraph.innerText = `${Math.round(weatherData.main.temp - 273)} Celsius Degrees`;
-      descriptionFooter.innerText = weatherData.weather[0].description;
+      tempParagraph.innerHTML = `<b>${tempInCelsius}</b> <sup>O</sup>C`;
+      desc.innerText = weatherData.weather[0].description;
+      littleImage.src = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
       section.appendChild(heading);
       section.appendChild(tempParagraph);
-      section.appendChild(descriptionFooter);
+      footer.appendChild(desc);
+      footer.appendChild(littleImage);
+      section.appendChild(footer);
+      section.style.background = color;
       divContainer.appendChild(section);
+      inputField.value = '';
+      inputField.focus();
     })
     .catch(errorMsg => {
-      console.error('The city you have typed does not exist');
+      console.error(errorMsg);
     })
 }
 
-btn.addEventListener('click', getWeatherForCity);
-
-console.log(navigator.geolocation.getCurrentPosition(Position => {
-  console.log(Position.coords.latitude);
-  console.log(Position.coords.longitude);
-}))
+form.addEventListener('submit', getWeatherForCity);
