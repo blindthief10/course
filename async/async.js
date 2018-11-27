@@ -1,43 +1,52 @@
-let currentRuler = 'Cersei Lannister';
 
-let changeRuler = name => {
-  currentRuler = name;
-  return currentRuler;
-}
+let firstStudent = 'Meir';
 
-let asyncChangeRuler = (name, time) => {
-  let promisedName = new Promise((resolve, reject) => {
-    if (name === 'Jon Snow') {
-      reject('Bastards are not allowed to sit on the iron throne!');
+let changeStudent = name => {
+  let promisedStudent = new Promise((resolve, reject) => {
+    if (name.length === 4) {
+      reject('Too short name!');
     }
-      setTimeout(() => {
-        resolve(name);
-      }, time);
+    resolve(name);
+  });
+
+  return promisedStudent;
+}
+
+let printAnotherStudent = newStudent => {
+  let nameLower = newStudent.toUpperCase();
+  firstStudent = nameLower;
+  console.log(firstStudent);
+}
+
+console.log(firstStudent);
+
+changeStudent('Jens')
+  .then(printAnotherStudent)
+  .catch(nostradamus => {
+    console.warn(nostradamus);
   })
-  return promisedName;
+
+console.log(firstStudent);
+
+
+// Use the fetch api to brng data
+
+fetch('../images/home.jpg')
+  .then(response => {
+    console.log(response.url);
+    let image = document.createElement('IMG');
+    image.src = response.url;
+    document.body.appendChild(image);
+  })
+  .catch(errMessage => {
+    let createParagraph = document.createElement('P');
+    createParagraph.innerText = `Something went terribly wrong!`;
+    document.body.appendChild(createParagraph);
+  })
+
+
+try {
+  console.log(whatever);
+} catch (error) {
+  console.log(error);
 }
-
-let rulers = ['Danny', 'Jon Snow', 'Euron Greyjoy', 'Jamie Lannister', 'NightKing'];
-let times = [5000, 3000, 2000, 1500, 1000]
-let counter = 0;
-
-let makeRulersAtOnce = (counter) => {
-  if (counter === rulers.length) {
-    return;
-  }
-
-  asyncChangeRuler(rulers[counter], times[counter])
-      .then(name => {
-        currentRuler = name;
-        console.log(currentRuler);
-        counter++;
-        makeRulersAtOnce(counter);
-      })
-      .catch(errorMessage => {
-        console.warn(errorMessage);
-      })
-}
-
-makeRulersAtOnce(counter);
-
-console.log(currentRuler);
