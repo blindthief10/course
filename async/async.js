@@ -1,22 +1,18 @@
+const authToken = '16d4785f9c10724266053adb3c29dcfd';
 const btn = document.querySelector('button');
 const form = document.querySelector('form');
+const inputField = document.querySelector('input');
+const divContainer = document.querySelector('#container');
 
-const colorTemps = [
-  {highestTemp: 40, color: 'red'},
-  {highestTemp: 35, color: 'orange'},
-  {highestTemp: 30, color: 'yellow'},
-  {highestTemp: 20, color: 'deepskyblue'},
-  {highestTemp: 10, color: 'purple'},
-  {highestTemp: 0, color: 'grey'},
-  {highestTemp: -100, color: 'white'}
+const colorTemperatures = [
+  {limitTemp: 40, color: 'red'},
+  {limitTemp: 35, color: 'orange'},
+  {limitTemp: 30, color: 'yellow'},
+  {limitTemp: 20, color: 'deepskyblue'},
+  {limitTemp: 10, color: 'purple'},
+  {limitTemp: 0, color: 'grey'},
+  {limitTemp: -100, color: 'white'}
 ];
-
-console.log();
-
-const authToken = '16d4785f9c10724266053adb3c29dcfd';
-
-let inputField = document.querySelector('input');
-let divContainer = document.querySelector('#container');
 
 let getWeatherForCity = ev => {
   ev.preventDefault();
@@ -33,7 +29,7 @@ let getWeatherForCity = ev => {
       let littleImage = document.createElement('IMG');
       let footer = document.createElement('FOOTER');
       let tempInCelsius = Math.round(weatherData.main.temp - 273);
-      let color = colorTemps.find(temp => tempInCelsius > temp.highestTemp).color;
+      let color = colorTemperatures.find(entry => tempInCelsius > entry.limitTemp).color;
       heading.innerText = weatherData.name;
       tempParagraph.innerHTML = `<b>${tempInCelsius}</b> <sup>O</sup>C`;
       desc.innerText = weatherData.weather[0].description;
