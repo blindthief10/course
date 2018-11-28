@@ -1,7 +1,7 @@
 let fetchItem = document.querySelectorAll(`li`)[1];
 let picturesContainer = document.querySelector('#container');
 
-fetchItem.addEventListener('click', ev => {
+fetchItem.addEventListener('click', async ev => {
   fetch('quotes.json')
     .then(data => data.json())
     .then(imageObjects => {
