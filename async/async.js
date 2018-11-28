@@ -74,8 +74,3 @@ let getWeatherForCity = ev => {
 }
 
 btn.addEventListener('click', getWeatherForCity);
-
-console.log(navigator.geolocation.getCurrentPosition(Position => {
-  console.log(Position.coords.latitude);
-  console.log(Position.coords.longitude);
-}))
