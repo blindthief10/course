@@ -1,12 +1,24 @@
 const images = ['home', 'athens', 'bahnhof', 'syvota'];
+const container = document.querySelector('#container');
 
-let fetchImages = async collection => {
+let bringImagesTimeout = (elem, time) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(elem)
+    }, time)
+  })
+}
+
+let createElements = async collection => {
   for (image of collection) {
     let picture = await fetch(`../../images/${image}.jpg`);
     let newImage = document.createElement('IMG');
+    let imagePause = await bringImagesTimeout(newImage, 200);
     newImage.src = picture.url;
-    document.body.appendChild(newImage);
+    container.appendChild(newImage);
   }
 }
 
-fetchImages(images);
+setTimeout(() => {
+  createElements(images);
+}, 2000)
