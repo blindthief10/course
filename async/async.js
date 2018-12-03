@@ -1,5 +1,3 @@
-// Have a timeout for every new box that is created
-
 const authToken = '16d4785f9c10724266053adb3c29dcfd';
 const btn = document.querySelector('button');
 const form = document.querySelector('form');
@@ -66,7 +64,7 @@ let getWeatherForCity = async ev => {
         inputField.value = '';
         inputField.focus();
         intervalCounter++;
-      }, 500)
+      }, 200)
   }catch (e) {
     console.warn(e);
   }
