@@ -1,4 +1,3 @@
-// Accept multiple cities from input, create multiple sections
 // Have a timeout for every new box that is created
 
 const authToken = '16d4785f9c10724266053adb3c29dcfd';
@@ -17,13 +16,25 @@ const colorTemperatures = [
   {limitTemp: -100, color: 'white'}
 ];
 
+let makeAllRequestsSimultaneously = collectionOfCities => {
+  let allCitiesPromises = [];
+  for (city of collectionOfCities) {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${authToken}`
+    let promiseCity =  new Promise((resolve, reject) => {
+        resolve(fetch(url));
+    })
+    allCitiesPromises.push(promiseCity);
+  }
+  console.log(allCitiesPromises);
+  return Promise.all(allCitiesPromises);
+}
+
 let getWeatherForCity = async ev => {
   ev.preventDefault();
-  let cities = inputField.value.split(`-`);
+  let cities = inputField.value.split(`-`); // ['Hamburg', 'Berlin', 'Athens']
   try {
-    for (city of cities) {
-      let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${authToken}`;
-      let res = await fetch(weatherUrl);
+      let allResponses = await makeAllRequestsSimultaneously(cities);
+      console.log(allResponses);
       let weatherData = await res.json();
       console.log(weatherData);
       let section = document.createElement('SECTION');
@@ -47,7 +58,6 @@ let getWeatherForCity = async ev => {
       divContainer.appendChild(section);
       inputField.value = '';
       inputField.focus();
-    }
 
   }catch (e) {
     console.warn(e);
