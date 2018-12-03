@@ -25,40 +25,48 @@ let makeAllRequestsSimultaneously = collectionOfCities => {
     })
     allCitiesPromises.push(promiseCity);
   }
-  console.log(allCitiesPromises);
   return Promise.all(allCitiesPromises);
 }
 
 let getWeatherForCity = async ev => {
   ev.preventDefault();
-  let cities = inputField.value.split(`-`); // ['Hamburg', 'Berlin', 'Athens']
+  let cities = inputField.value.split(`-`);
+  let intervalCounter = 0;
   try {
       let allResponses = await makeAllRequestsSimultaneously(cities);
-      console.log(allResponses);
-      let weatherData = await res.json();
-      console.log(weatherData);
-      let section = document.createElement('SECTION');
-      let heading = document.createElement('H3');
-      let tempParagraph = document.createElement('P');
-      let desc = document.createElement('SPAN');
-      let littleImage = document.createElement('IMG');
-      let footer = document.createElement('FOOTER');
-      let tempInCelsius = Math.round(weatherData.main.temp - 273);
-      let color = colorTemperatures.find(entry => tempInCelsius > entry.limitTemp).color;
-      heading.innerText = weatherData.name;
-      tempParagraph.innerHTML = `<b>${tempInCelsius}</b> <sup>O</sup>C`;
-      desc.innerText = weatherData.weather[0].description;
-      littleImage.src = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-      section.appendChild(heading);
-      section.appendChild(tempParagraph);
-      footer.appendChild(desc);
-      footer.appendChild(littleImage);
-      section.appendChild(footer);
-      section.style.background = color;
-      divContainer.appendChild(section);
-      inputField.value = '';
-      inputField.focus();
+      let weatherData = [];
+      for (response of allResponses) {
+        let convertedResponse = await response.json();
+        weatherData.push(convertedResponse);
+      }
 
+      let citiesInterval = setInterval( async () => {
+        if (intervalCounter === weatherData.length - 1) {
+          clearInterval(citiesInterval);
+        }
+        let section = document.createElement('SECTION');
+        let heading = document.createElement('H3');
+        let tempParagraph = document.createElement('P');
+        let desc = document.createElement('SPAN');
+        let littleImage = document.createElement('IMG');
+        let footer = document.createElement('FOOTER');
+        let tempInCelsius = Math.round(weatherData[intervalCounter].main.temp - 273);
+        let color = colorTemperatures.find(entry => tempInCelsius > entry.limitTemp).color;
+        heading.innerText = weatherData[intervalCounter].name;
+        tempParagraph.innerHTML = `<b>${tempInCelsius}</b> <sup>O</sup>C`;
+        desc.innerText = weatherData[intervalCounter].weather[0].description;
+        littleImage.src = `http://openweathermap.org/img/w/${weatherData[intervalCounter].weather[0].icon}.png`;
+        section.appendChild(heading);
+        section.appendChild(tempParagraph);
+        footer.appendChild(desc);
+        footer.appendChild(littleImage);
+        section.appendChild(footer);
+        section.style.background = color;
+        divContainer.appendChild(section);
+        inputField.value = '';
+        inputField.focus();
+        intervalCounter++;
+      }, 500)
   }catch (e) {
     console.warn(e);
   }
