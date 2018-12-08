@@ -49,9 +49,10 @@ let getWeatherForCity = async function(ev) {
       section.append(heading, tempParagraph, footer);
       section.style.background = color;
       $('#container').append(section);
-      $('input').val('')
+      $('section').animate({'opacity': 1}, 500);
+      $('input').val('');
       intervalCounter++;
-    }, 200)
+    }, 500)
   } catch (e) {
     console.warn(e);
   }
