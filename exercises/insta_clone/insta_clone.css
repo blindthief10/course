@@ -62,6 +62,23 @@ header {
   left: 0;
 }
 
+header img {
+  width: 40%;
+  height: 80%;
+}
+
+header span {
+  position: absolute;
+  top: 2vw;
+  right: 1vw;
+  font-size: 3vw;
+  color: white;
+}
+
+header span:hover {
+  cursor: pointer;
+}
+
 #container section:hover {
   box-shadow: 0 0 1vw #000;
   cursor: pointer;
@@ -80,21 +97,4 @@ header {
 
 #container p {
   font-size: 1.2vw;
-}
-
-header img {
-  width: 40%;
-  height: 80%;
-}
-
-header span {
-  position: absolute;
-  top: 2vw;
-  right: 1vw;
-  font-size: 3vw;
-  color: white;
-}
-
-header span:hover {
-  cursor: pointer;
 }

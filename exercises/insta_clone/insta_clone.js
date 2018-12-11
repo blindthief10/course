@@ -17,6 +17,7 @@ fetchItem.addEventListener('click', async ev => {
         section.appendChild(title);
         section.appendChild(description);
         picturesContainer.appendChild(section);
+
         section.addEventListener('click', ev => {
           let blackLayer = document.createElement('HEADER');
           let closeSpan = document.createElement('SPAN');
@@ -26,10 +27,13 @@ fetchItem.addEventListener('click', async ev => {
           blackLayer.appendChild(closeSpan);
           blackLayer.appendChild(bigImage);
           document.body.appendChild(blackLayer);
+
           closeSpan.addEventListener('click', ev => {
             document.body.removeChild(ev.target.parentElement);
           })
+
         })
+        
       }
 
     })
