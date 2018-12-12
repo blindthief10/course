@@ -1,0 +1,11 @@
+{
+	"title" : "Skills",
+	"skills" : [
+    {"role": "HTML5", "percent": "90", "color": "#E44D26"},
+    {"role": "CSS3", "percent": "80", "color": "#1A6FB4"},
+    {"role": "SCSS", "percent": "85", "color": "#C96195"},
+    {"role": "JAVASCRIPT", "percent": "65", "color": "#EDD718"},
+    {"role": "NODEJS", "percent": "35", "color": "#8CBF3D"},
+    {"role": "JQUERY", "percent": "55", "color": "#0866A9"},
+  ]
+}

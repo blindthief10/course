@@ -37,6 +37,7 @@ nav > li {
 nav > li:hover {
   background: black;
   color: cyan;
+  cursor: pointer;
 }
 
 li {
@@ -52,10 +53,6 @@ a {
   text-decoration: none;
   padding: 1vw 0;
   transition: color 0.4s linear;
-}
-
-nav > li:hover > ul {
-  display: block;
 }
 
 nav ul a:hover {
