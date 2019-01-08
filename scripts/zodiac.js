@@ -23,15 +23,11 @@ let myBirthday = new Date(1988, 2, 23);
 let suesBirthday = new Date(1981, 1, 19);
 let meirsBirth = new Date(1984, 0, 4);
 let showZodiac = function(birthday) {
-  birthday.getMonth() === 0 ? birthday.setYear(2021) : birthday.setYear(2020);
+  birthday.getMonth() === 0 && birthday.getDate < 20 ? birthday.setYear(2021) : birthday.setYear(2020);
   for (let zodiac of allZodiacs) {
     if (birthday >= zodiac.beginDate && birthday <= zodiac.endDate) {
-      console.log(`Your zodiac is ${zodiac.sign}`);
-      return;
+      console.log();
+      return `Your zodiac is ${zodiac.sign}`;
     }
   }
 }
-
-showZodiac(myBirthday);
-showZodiac(suesBirthday);
-showZodiac(meirsBirth);

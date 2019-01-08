@@ -36,10 +36,14 @@
 ehthumbs.db
 Thumbs.db
 
-#image file not ignore 
+#image file not ignore
 
 *.png
 *.svg
 *.jpg
 *.JPEG
 .images
+
+/tdd/node_modules
+
+/images
