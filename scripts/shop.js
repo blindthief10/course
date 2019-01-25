@@ -5,7 +5,6 @@ const customersOrder = [];
 const fishInfo = [{species: 'tuna', price: 10}, {species: 'salmon', price: 50}, {species: 'koi', price: 100}];
 
 //populate fishStock with a specific number of fishes!
-
 const populateStock = (numOfRandomFishes) => {
 
   for (let i = 1; i <= numOfRandomFishes; i++) {
