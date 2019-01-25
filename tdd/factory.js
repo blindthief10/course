@@ -70,14 +70,4 @@ const showZodiac = birthday => {
   }
 }
 
-const allDates = [
-  new Date(1988, 2, 30), // "Aries"
-  new Date(1988, 3, 28), // "Taurus"
-  new Date(1988, 4, 27), // "Gemini"
-  // etc
-]
-
-const expectedResult = `Your zodiac is ${sign[index]}`;
-
-
 module.exports = {calculateNumbers: calculateNumbers, factorial: factorial, fizzBuzz: fizzBuzz, showZodiac: showZodiac};
