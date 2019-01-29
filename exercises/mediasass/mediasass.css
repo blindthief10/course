@@ -1,33 +1,22 @@
 body {
-  margin: 0;
-}
-
-body nav {
-  display: flex;
-  background: deepskyblue;
-}
-
-@media screen and (max-width: 768px) {
+  margin: 0; }
   body nav {
-    flex-direction: column;
-  }
-}
+    display: flex;
+    background: deepskyblue; }
+    @media screen and (max-width: 768px) {
+      body nav {
+        flex-direction: column; } }
+    body nav li {
+      list-style-type: none;
+      color: white;
+      padding: 2vw 0;
+      font-size: 2.2vw;
+      flex-grow: 1;
+      text-align: center; }
+      body nav li:hover {
+        background: #0099cc; }
+      @media screen and (max-width: 600px) {
+        body nav li {
+          font-size: 4.5vw; } }
 
-body nav li {
-  list-style-type: none;
-  color: white;
-  padding: 2vw 0;
-  font-size: 2.2vw;
-  flex-grow: 1;
-  text-align: center;
-}
-
-body nav li:hover {
-  background: #0099cc;
-}
-
-@media screen and (max-width: 600px) {
-  body nav li {
-    font-size: 4.5vw;
-  }
-}
+/*# sourceMappingURL=mediasass.css.map */

@@ -1,64 +1,54 @@
-const fishStock = [];
-const customersOrder = [];
+const fishInfo = [
+  {species: 'tuna', price: 10},
+  {species: 'salmon', price: 50},
+  {species: 'koi', price: 100}
+];
+const basket = [];
+const myFishMarket = [];
 
-//info about every fish species and corresponding values
-const fishInfo = [{species: 'tuna', price: 10}, {species: 'salmon', price: 50}, {species: 'koi', price: 100}];
+// populate the myFishMarket
 
-//populate fishStock with a specific number of fishes!
-const populateStock = (numOfRandomFishes) => {
-
-  for (let i = 1; i <= numOfRandomFishes; i++) {
-    let pickRandomSpecies = fishInfo[Math.round(Math.random() * 2)];
-    fishStock.push(pickRandomSpecies.species);
+const fillWithFishes = (numOfFishes, collectionMarket) => {
+  for(let i = 1; i <= numOfFishes; i++) {
+    const randomIndex = Math.floor(Math.random() * fishInfo.length); // This returns either 0, 1 or 2
+    collectionMarket.push(fishInfo[randomIndex].species);
   }
-
 }
 
-//Let's put 100 fishes inside!
-populateStock(100);
+fillWithFishes(100, myFishMarket);
 
-const addFish = type => {
+console.log(myFishMarket);
 
-  if (!fishStock.includes(type)) {
-    // Fish was not found!
-    console.log('The type of fish you requested does not exist! Please select another fish!');
+const addFishToOrder = type => {
+  if (!myFishMarket.includes(type)) {
+    console.log(`Sorry but the ${type} you requested is out of order!`);
     return false;
   } else {
-    //Check if there is already a fish like that in the order, then group them together!
-    const findCurrentSpecies = customersOrder.find(fish => fish.species === type);
-
-    if (findCurrentSpecies) {
-      // If it does, just increment the quantity of the ordered fish!
-      findCurrentSpecies.quantity++;
+    const selectedFishBasket = basket.find(fish => fish.species === type);
+    if (selectedFishBasket) {
+      selectedFishBasket.quantity++;
     } else {
-      // If not just put a new fish order to the order array!
-      const fishPrice = fishInfo.find(fish => fish.species === type).price;
-      customersOrder.push({species: type, quantity: 1, price: fishPrice});
+      const findSpecificTypeInfo = fishInfo.find(fish => fish.species === type);
+      basket.push({species: type, price: findSpecificTypeInfo.price, quantity: 1});
     }
 
-    //In any case you will have to remove the fish from the stock!
-    fishStock.splice(fishStock.indexOf(type), 1);
+    myFishMarket.splice(type, 1);
   }
 }
 
-addFish('salmon');
-addFish('salmon');
-addFish('tuna');
-addFish('tuna');
-addFish('tuna');
-addFish('salmon');
-addFish('salmon');
-addFish('koi');
+addFishToOrder('salmon');
+addFishToOrder('salmon');
+addFishToOrder('koi');
+addFishToOrder('tuna');
+addFishToOrder('koi');
+addFishToOrder('salmon');
+addFishToOrder('salmon');
 
-// See the order!
-console.log(customersOrder);
-console.log(fishStock.length);
+console.log(myFishMarket.length);
+console.log(basket);
 
-//Calculate the total cost!
-
-const calculateOrdersCost = order => {
-  return order.reduce((a, b) => a + b.quantity * b.price, 0);
+const calcualateBasketCosts = basket => {
+  return basket.reduce((cost, eachFish) => cost + eachFish.price * eachFish.quantity, 0);
 }
 
-// print total cost
-console.log(calculateOrdersCost(customersOrder));
+console.log(calcualateBasketCosts(basket));
