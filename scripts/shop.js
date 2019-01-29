@@ -1,54 +1,51 @@
-const fishInfo = [
-  {species: 'tuna', price: 10},
-  {species: 'salmon', price: 50},
-  {species: 'koi', price: 100}
-];
-const basket = [];
 const myFishMarket = [];
-
-// populate the myFishMarket
+const fishInfo = ['tuna', 'salmon', 'koi'];
 
 const fillWithFishes = (numOfFishes, collectionMarket) => {
   for(let i = 1; i <= numOfFishes; i++) {
     const randomIndex = Math.floor(Math.random() * fishInfo.length); // This returns either 0, 1 or 2
-    collectionMarket.push(fishInfo[randomIndex].species);
+    collectionMarket.push(fishInfo[randomIndex]);
   }
 }
 
 fillWithFishes(100, myFishMarket);
 
-console.log(myFishMarket);
-
-const addFishToOrder = type => {
-  if (!myFishMarket.includes(type)) {
-    console.log(`Sorry but the ${type} you requested is out of order!`);
-    return false;
-  } else {
-    const selectedFishBasket = basket.find(fish => fish.species === type);
-    if (selectedFishBasket) {
-      selectedFishBasket.quantity++;
-    } else {
-      const findSpecificTypeInfo = fishInfo.find(fish => fish.species === type);
-      basket.push({species: type, price: findSpecificTypeInfo.price, quantity: 1});
-    }
-
-    myFishMarket.splice(type, 1);
+const removeByFish = (fishType, numOfFishes) => {
+  for (let i = 1; i <= numOfFishes; i++) {
+    myFishMarket.splice(myFishMarket.indexOf(fishType), 1);
   }
 }
 
-addFishToOrder('salmon');
-addFishToOrder('salmon');
-addFishToOrder('koi');
-addFishToOrder('tuna');
-addFishToOrder('koi');
-addFishToOrder('salmon');
-addFishToOrder('salmon');
+const addNewOrder = (numOfTunas, numOfSalmons, numOfKois) => {
+  const availableTunas = myFishMarket.filter(fish => fish === 'tuna').length;
+  const availableSalmons = myFishMarket.filter(fish => fish === 'salmon').length;
+  const availableKois = myFishMarket.filter(fish => fish === 'koi').length;
 
-console.log(myFishMarket.length);
-console.log(basket);
+  const orderedTunas = availableTunas - numOfTunas > 0 ? numOfTunas : availableTunas
+  const orderedSalmons = availableSalmons - numOfSalmons > 0 ? numOfSalmons : availableSalmons
+  const orderedKois = availableKois - numOfKois > 0 ? numOfKois : availableKois
 
-const calcualateBasketCosts = basket => {
-  return basket.reduce((cost, eachFish) => cost + eachFish.price * eachFish.quantity, 0);
+  removeByFish('tuna', orderedTunas);
+  removeByFish('salmon', orderedSalmons);
+  removeByFish('koi', orderedKois);
+
+  return [
+    {species: 'tuna', price: 10, quantity: orderedTunas},
+    {species: 'salmon', price: 50, quantity: orderedSalmons},
+    {species: 'koi', price: 100, quantity: orderedKois}
+  ]
 }
 
-console.log(calcualateBasketCosts(basket));
+const calcualateBasketCosts = basket => basket.reduce((cost, eachFish) => cost + eachFish.price * eachFish.quantity, 0);
+
+console.log(myFishMarket.length);
+const maurosOrder = addNewOrder(5, 2, 1);
+console.log(myFishMarket.length);
+const eugensOrder = addNewOrder(2, 5, 5);
+console.log(myFishMarket.length);
+const alisOrder = addNewOrder(5, 10, 0);
+console.log(myFishMarket.length);
+
+console.log(calcualateBasketCosts(maurosOrder));
+console.log(calcualateBasketCosts(eugensOrder));
+console.log(calcualateBasketCosts(alisOrder));
