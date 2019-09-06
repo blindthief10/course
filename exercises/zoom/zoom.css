@@ -2,7 +2,7 @@ section {
   width:60vw;
   height: 40vw;
   border: 1px solid black;
-  background-image: url(https://www.thailandtravel.co/wp-content/uploads/2015/10/phuket.jpg);
+  background-image: url(https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Belgium-Bruges-470750764-KavalenkavaVolha-Copy.jpg);
   background-position: center center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -11,21 +11,6 @@ section {
   flex-direction: column-reverse;
   justify-content: flex-start;
   transition: background-size 0.3s linear;
-}
-
-section p {
-  color: #fff;
-  font-family: verdana;
-  font-size: 1.5vw;
-  background: rgba(0, 0, 0, 0.5);
-  margin: 0;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.5s linear;
-}
-
-section:hover p {
-  height: 8vw;
 }
 
 section:hover {
