@@ -25,19 +25,19 @@ section div span {
 }
 
 section div:first-of-type {
-  background-image: url(../../images/kobenhavn.jpg);
+  background-image: url(https://blog.hotelspecials.dk/wp-content/uploads/sites/9/2017/08/kop-1170x780.jpg);
 }
 
 section div:nth-of-type(2) {
-  background-image: url(../../images/santorini.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2018/07/30/14/26/santorini-3572767_960_720.jpg);
 }
 
 section div:nth-of-type(3) {
-  background-image: url(../../images/beach.jpeg);
+  background-image: url(https://www.odyssey-travels.com/site/country/maldives=403724-300.jpg);
 }
 
 section div:last-of-type {
-  background-image: url(../../images/rome.jpg);
+  background-image: url(https://media.fshoq.com/images/280/st-peters-basilica-vatican-rome-280-small.jpg);
 }
 
 section div:hover {
