@@ -13,7 +13,7 @@ body main {
 
 body main section {
       box-sizing: border-box;
-      width: 21.4285714286vw;
+      width: 21.42vw;
       display: flex;
       flex-direction: column;
       background: white;
