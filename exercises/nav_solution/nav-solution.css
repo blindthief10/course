@@ -11,16 +11,21 @@ header {
 nav {
   background: deepskyblue;
   margin: 1vw 0;
-  position: sticky;
-  top: 0;
 }
 
 nav li {
   list-style-type: none;
   display: inline-block;
+  font-family: tahoma;
   color: white;
-  font-size: 3.2vw;
-  padding: 1vw 2.6vw;
+  font-size: 3vw;
+  padding: 1vw 2.4vw;
+}
+
+nav li:hover {
+  background: black;
+  color: deepskyblue;
+  cursor: pointer;
 }
 
 img {
