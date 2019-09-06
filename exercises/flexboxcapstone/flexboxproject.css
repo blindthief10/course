@@ -1,8 +1,3 @@
-:root {
-  --light-blue: #0DEBCD;
-  --darker-blue: #0AB8A1;
-}
-
 * {
   margin: 0;
 }
@@ -13,7 +8,7 @@ h4, h5, h6 {
 }
 
 nav {
-  background: var(--light-blue);
+  background: #0DEBCD;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -38,12 +33,12 @@ nav li img {
 }
 
 nav a:hover {
-  background: var(--darker-blue);
+  background: #0AB8A1;
 }
 
 main {
   height: 90vh;
-  background-image: url(../../images/beach.jpeg);
+  background-image: url(https://www.odyssey-travels.com/site/country/maldives=403724-300.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 40% 40%;
@@ -125,7 +120,7 @@ section div h4::selection {
 }
 
 section div img {
-  width: 40%;
+  width: 30%;
   height: 120px;
   border-radius: 40%;
   transition: box-shadow 0.5s linear;
@@ -178,7 +173,7 @@ footer > article {
 }
 
 footer:hover > article {
-  height: 10vw;
+  height: 7.5vw;
   padding: 2vw 0.7vw;
 }
 
