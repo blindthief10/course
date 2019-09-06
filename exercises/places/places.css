@@ -1,13 +1,17 @@
 body {
   background: #ccc;
-  margin: 0; }
-  body main {
+  margin: 0;
+}
+
+body main {
     width: 75vw;
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
-    margin: 5vw auto; }
-    body main section {
+    margin: 5vw auto;
+}
+
+body main section {
       box-sizing: border-box;
       width: 21.4285714286vw;
       display: flex;
@@ -15,72 +19,65 @@ body {
       background: white;
       height: 40vw;
       justify-content: space-between;
-      margin: 1vw 1.5306122449vw; }
-      body main section div, body main section h4, body main section p, body main section button {
+      margin: 1vw 1.53vw;
+  }
+
+body main section div, body main section h4, body main section p, body main section button {
         margin: 0;
         padding: 0;
-        box-sizing: border-box; }
-      body main section div {
+        box-sizing: border-box;
+    }
+
+body main section div {
         height: 18vw;
         background-repeat: no-repeat;
-        background-size: 100% 100%; }
-      body main section h4 {
+        background-size: 100% 100%;
+    }
+
+body main section h4 {
         padding: 1.5vw 0;
         font-family: tahoma;
         font-size: 1.7vw;
-        text-align: center; }
-      body main section p {
+        text-align: center;
+    }
+
+body main section p {
         padding: 1vw 1.2vw;
         font-family: verdana;
         font-size: 1.3vw;
-        text-align: left; }
-      body main section button {
+        text-align: left;
+    }
+
+body main section button {
         font-size: 1.3vw;
         font-family: 'Franklin Gothic';
         padding: 1vw 0.5vw;
         background: #0075dd;
-        border: none; }
-      body main section:nth-of-type(1) > div {
-        background-image: url(../../images/hamburg.jpg); }
-      body main section:nth-of-type(1) > h4:before {
-        content: "HAMBURG"; }
-      body main section:nth-of-type(1) > p:before {
-        content: "Hamburg center as it is shown from binnenalster view."; }
-      body main section:nth-of-type(2) > div {
-        background-image: url(../../images/home.jpg); }
-      body main section:nth-of-type(2) > h4:before {
-        content: "HOME"; }
-      body main section:nth-of-type(2) > p:before {
-        content: "Me looking at the sky of mundsburg before flying to Greece"; }
-      body main section:nth-of-type(3) > div {
-        background-image: url(../../images/sofia.jpg); }
-      body main section:nth-of-type(3) > h4:before {
-        content: "SOFIA"; }
-      body main section:nth-of-type(3) > p:before {
-        content: "Dont really remember what i ve done there!"; }
-      body main section:nth-of-type(4) > div {
-        background-image: url(../../images/rome.jpg); }
-      body main section:nth-of-type(4) > h4:before {
-        content: "ROME"; }
-      body main section:nth-of-type(4) > p:before {
-        content: "View outside from Caesars Palace in Italy and its own capital, Rome"; }
-      body main section:nth-of-type(5) > div {
-        background-image: url(../../images/kobenhavn.jpg); }
-      body main section:nth-of-type(5) > h4:before {
-        content: "KOBENHAVN"; }
-      body main section:nth-of-type(5) > p:before {
-        content: "Highly aristocratic, wonderful and expensive as hell. One of the best trips ever though"; }
-      body main section:nth-of-type(6) > div {
-        background-image: url(../../images/santorini.jpg); }
-      body main section:nth-of-type(6) > h4:before {
-        content: "SANTORINI"; }
-      body main section:nth-of-type(6) > p:before {
-        content: "Standard classic picturesque view from above. Jens knows already his next destination"; }
-      body main section:nth-of-type(7) > div {
-        background-image: url(../../images/beach.jpeg); }
-      body main section:nth-of-type(7) > h4:before {
-        content: "MALDIVES"; }
-      body main section:nth-of-type(7) > p:before {
-        content: "Next destination that is coming is maldives! Be there soon!"; }
+        border: none;
+    }
 
-/*# sourceMappingURL=places.css.map */
+body main section button:hover {
+  cursor: pointer;
+}
+
+body main section:nth-of-type(1) > div {
+  background-image: url(https://blog.hotelspecials.dk/wp-content/uploads/sites/9/2017/08/kop-1170x780.jpg);
+}
+body main section:nth-of-type(2) > div {
+  background-image: url(https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Belgium-Bruges-470750764-KavalenkavaVolha-Copy.jpg);
+}
+body main section:nth-of-type(3) > div {
+  background-image: url(https://www.iamexpat.nl/sites/default/files/styles/article--full/public/rijksmuseum-amsterdam-museum-iamsterdam.jpg?itok=MwiTROHQ);
+}
+body main section:nth-of-type(4) > div {
+  background-image: url(https://media.fshoq.com/images/280/st-peters-basilica-vatican-rome-280-small.jpg);
+}
+body main section:nth-of-type(5) > div {
+  background-image: url(https://blog.hotelspecials.dk/wp-content/uploads/sites/9/2017/08/kop-1170x780.jpg);
+}
+body main section:nth-of-type(6) > div {
+  background-image: url(https://cdn.pixabay.com/photo/2018/07/30/14/26/santorini-3572767_960_720.jpg);
+}
+body main section:nth-of-type(7) > div {
+  background-image: url(https://www.odyssey-travels.com/site/country/maldives=403724-300.jpg);
+}
